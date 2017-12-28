@@ -8,3 +8,13 @@ C:\Users\Luke\source\repos\Sudoku-GUI\Sudoku-GUI\obj\Debug\Sudoku-GUI.csproj.Cor
 C:\Users\Luke\source\repos\Sudoku-GUI\Sudoku-GUI\obj\Debug\Sudoku-GUI.exe
 C:\Users\Luke\source\repos\Sudoku-GUI\Sudoku-GUI\obj\Debug\Sudoku-GUI.pdb
 C:\Users\Luke\source\repos\Sudoku-GUI\Sudoku-GUI\obj\Debug\Sudoku-GUI.csprojResolveAssemblyReference.cache
+C:\Users\llasley\source\repos\Sudoku\Sudoku-GUI\bin\Debug\Sudoku-GUI.exe.config
+C:\Users\llasley\source\repos\Sudoku\Sudoku-GUI\bin\Debug\Sudoku-GUI.exe
+C:\Users\llasley\source\repos\Sudoku\Sudoku-GUI\bin\Debug\Sudoku-GUI.pdb
+C:\Users\llasley\source\repos\Sudoku\Sudoku-GUI\obj\Debug\Sudoku-GUI.csprojResolveAssemblyReference.cache
+C:\Users\llasley\source\repos\Sudoku\Sudoku-GUI\obj\Debug\Sudoku.Form1.resources
+C:\Users\llasley\source\repos\Sudoku\Sudoku-GUI\obj\Debug\Sudoku.Properties.Resources.resources
+C:\Users\llasley\source\repos\Sudoku\Sudoku-GUI\obj\Debug\Sudoku-GUI.csproj.GenerateResource.Cache
+C:\Users\llasley\source\repos\Sudoku\Sudoku-GUI\obj\Debug\Sudoku-GUI.csproj.CoreCompileInputs.cache
+C:\Users\llasley\source\repos\Sudoku\Sudoku-GUI\obj\Debug\Sudoku-GUI.exe
+C:\Users\llasley\source\repos\Sudoku\Sudoku-GUI\obj\Debug\Sudoku-GUI.pdb

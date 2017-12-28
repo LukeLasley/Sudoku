@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.coord00 = new System.Windows.Forms.Button();
             this.coord01 = new System.Windows.Forms.Button();
@@ -130,7 +131,6 @@
             this.coord00.Size = new System.Drawing.Size(33, 33);
             this.coord00.TabIndex = 1;
             this.coord00.UseVisualStyleBackColor = true;
-            this.coord00.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // coord01
             // 
@@ -260,7 +260,6 @@
             this.coord17.Size = new System.Drawing.Size(34, 34);
             this.coord17.TabIndex = 17;
             this.coord17.UseVisualStyleBackColor = true;
-            this.coord17.Click += new System.EventHandler(this.button17_Click);
             // 
             // coord18
             // 
@@ -390,7 +389,6 @@
             this.coord35.Size = new System.Drawing.Size(34, 33);
             this.coord35.TabIndex = 33;
             this.coord35.UseVisualStyleBackColor = true;
-            this.coord35.Click += new System.EventHandler(this.coord35_Click);
             // 
             // coord36
             // 
@@ -877,6 +875,7 @@
             this.Controls.Add(this.coord01);
             this.Controls.Add(this.coord00);
             this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);

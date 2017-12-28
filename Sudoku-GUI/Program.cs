@@ -17,6 +17,7 @@ namespace Sudoku
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Form1 f = new Form1();
+            f.Text = "Sudoku";
             Board b = new Board(f);
             BoardBuilder builder = new BoardBuilder(b);
             builder.populateBoard();
