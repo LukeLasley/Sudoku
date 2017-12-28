@@ -49,6 +49,11 @@ namespace Sudoku
 
             return rowList;
         }
+        //implement remove
+        internal void remove(Point point)
+        {
+            throw new NotImplementedException();
+        }
 
         public List<int> getColumn(int x)
         {
