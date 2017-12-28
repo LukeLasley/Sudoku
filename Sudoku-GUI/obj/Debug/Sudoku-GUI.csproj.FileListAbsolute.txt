@@ -1,0 +1,10 @@
+C:\Users\Luke\source\repos\Sudoku-GUI\Sudoku-GUI\bin\Debug\Sudoku-GUI.exe.config
+C:\Users\Luke\source\repos\Sudoku-GUI\Sudoku-GUI\bin\Debug\Sudoku-GUI.exe
+C:\Users\Luke\source\repos\Sudoku-GUI\Sudoku-GUI\bin\Debug\Sudoku-GUI.pdb
+C:\Users\Luke\source\repos\Sudoku-GUI\Sudoku-GUI\obj\Debug\Sudoku.Form1.resources
+C:\Users\Luke\source\repos\Sudoku-GUI\Sudoku-GUI\obj\Debug\Sudoku.Properties.Resources.resources
+C:\Users\Luke\source\repos\Sudoku-GUI\Sudoku-GUI\obj\Debug\Sudoku-GUI.csproj.GenerateResource.Cache
+C:\Users\Luke\source\repos\Sudoku-GUI\Sudoku-GUI\obj\Debug\Sudoku-GUI.csproj.CoreCompileInputs.cache
+C:\Users\Luke\source\repos\Sudoku-GUI\Sudoku-GUI\obj\Debug\Sudoku-GUI.exe
+C:\Users\Luke\source\repos\Sudoku-GUI\Sudoku-GUI\obj\Debug\Sudoku-GUI.pdb
+C:\Users\Luke\source\repos\Sudoku-GUI\Sudoku-GUI\obj\Debug\Sudoku-GUI.csprojResolveAssemblyReference.cache
