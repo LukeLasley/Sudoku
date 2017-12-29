@@ -61,21 +61,31 @@ namespace Sudoku
             throw new NotImplementedException();
         }
 
-        private List<Point> getPermutations(List<Point>points)
+        private HashSet<List<Point>> getPermutations(List<Point>points)
         {
+            HashSet <List<Point>> permutations = new HashSet<List<Point>>();
             if(points.Count == 1)
             {
-                return points;
+                permutations.Add(points);
+                return permutations;
             }
             else
             {
                 for(int i= 0; i < points.Count; i++)
                 {
                     List<Point> pointsRemaining = points;
-                    pointsRemaining.Remove(points[i]);
-                    List<Point>getPermutations = getPermutations(pointsRemaining);
+                    Point curPoint = points[i];
+                    pointsRemaining.Remove(curPoint);
+                    HashSet<List<Point>> curPermutations = getPermutations(pointsRemaining);
+                    foreach(List<Point> permute in curPermutations)
+                    {
+                        List<Point> permuteCopy = permute;
+                        permuteCopy.Insert(0, curPoint);
+                        permutations.Add(permuteCopy);
+                    }
 
                 }
+                return permutations;
             }
         }
     }
