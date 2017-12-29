@@ -60,5 +60,23 @@ namespace Sudoku
         {
             throw new NotImplementedException();
         }
+
+        private List<Point> getPermutations(List<Point>points)
+        {
+            if(points.Count == 1)
+            {
+                return points;
+            }
+            else
+            {
+                for(int i= 0; i < points.Count; i++)
+                {
+                    List<Point> pointsRemaining = points;
+                    pointsRemaining.Remove(points[i]);
+                    List<Point>getPermutations = getPermutations(pointsRemaining);
+
+                }
+            }
+        }
     }
 }
