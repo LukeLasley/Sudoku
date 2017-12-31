@@ -52,7 +52,9 @@ namespace Sudoku
         //implement remove
         internal void remove(Point point)
         {
-            throw new NotImplementedException();
+            listOfPoints.Add(point);
+            board[point.Y, point.X] = 0;
+            f.updateCoord(point.Y, point.X, "");
         }
 
         public List<int> getColumn(int x)
@@ -94,7 +96,7 @@ namespace Sudoku
             p.Y = y;
             listOfPoints.Remove(p);
             board[y, x] = val;
-            f.updateCoord(y, x, val);
+            f.updateCoord(y, x, val.ToString());
         }
 
         public void clearBoard()

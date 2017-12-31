@@ -25,10 +25,10 @@ namespace Sudoku
         {
 
         }
-        public void updateCoord(int y, int x, int value)
+        public void updateCoord(int y, int x, String value)
         {
             var coordString = "coord" + y + x;
-            buttonsDictionary[coordString].Text = value.ToString();
+            buttonsDictionary[coordString].Text = value;
         }
 
         private void updateButtonDictionary()

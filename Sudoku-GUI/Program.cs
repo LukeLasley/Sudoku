@@ -22,6 +22,7 @@ namespace Sudoku
             BoardBuilder builder = new BoardBuilder(b);
             builder.populateBoard();
             Application.Run(f);
+            
 
 
         }
