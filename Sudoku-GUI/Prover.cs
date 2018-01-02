@@ -51,14 +51,38 @@ namespace Sudoku
                 int indexChosen = rand.Next(possiblePoints.Count);
                 Board copyBoard = board;
                 copyBoard.remove(possiblePoints[indexChosen]);
-                return solve(copyBoard);
+                possiblePoints.RemoveAt(indexChosen);
+                return preProve(copyBoard, copyBoard.getPointList());
             }
                 
         }
-        //implement solving
-        private int solve(Board copyBoard)
+        //Preprocessor method to clean up some of the points the prover doesnt need to visit.
+        private int preProve(Board copyBoard, List<Point> listOfPoints)
         {
-            throw new NotImplementedException();
+            int leastOptions = copyBoard.getLeastPossibleOptions();
+            //If there is a point with only one option, it will always be the same answer in every scenario.
+            if (leastOptions == 1)
+            {
+                Point p = copyBoard.getLeastPossiblePoint();
+                copyBoard.updateBoard(p.Y,p.X,board.getPossibleNumbers(p.Y, p.X)[0]);
+                return preProve(copyBoard, copyBoard.getPointList());
+
+            }
+            //If there is a point with no options, somehow we have created a board with no answer.
+            else if (leastOptions == 0)
+            {
+                return 0;
+            }
+            else
+            {
+                return prove(copyBoard);
+            }
+        }
+
+        private int prove(Board copyBoard)
+        {
+            HashSet<List<Point>> permutations = getPermutations(copyBoard.getPointList());
+            return 0;
         }
 
         private HashSet<List<Point>> getPermutations(List<Point>points)

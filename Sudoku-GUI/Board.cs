@@ -114,7 +114,7 @@ namespace Sudoku
 
         }
 
-        public Point getLeastPossible()
+        public Point getLeastPossiblePoint()
         {
             var p = listOfPoints[0];
             var possiblePointSize = getPossibleNumbers(p.Y, p.X).Count;
@@ -129,6 +129,23 @@ namespace Sudoku
                 }
             }
             return p;
+        }
+
+        public int getLeastPossibleOptions()
+        {
+            var p = listOfPoints[0];
+            var possiblePointSize = getPossibleNumbers(p.Y, p.X).Count;
+            for (int i = 0; i < listOfPoints.Count; i++)
+            {
+                var loopPoint = listOfPoints[i];
+                var loopPointPossibleSize = getPossibleNumbers(loopPoint.Y, loopPoint.X).Count;
+                if (loopPointPossibleSize < possiblePointSize)
+                {
+                    p = loopPoint;
+                    possiblePointSize = loopPointPossibleSize;
+                }
+            }
+            return possiblePointSize;
         }
         public void createListOfPoints()
         {

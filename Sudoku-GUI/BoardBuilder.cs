@@ -22,7 +22,7 @@ namespace Sudoku
             {
                 while (listOfPoints.Count > 0)
                 {
-                    var p = board.getLeastPossible();
+                    var p = board.getLeastPossiblePoint();
                     var possibleNumbers = board.getPossibleNumbers(p.Y, p.X);
                     if (possibleNumbers.Count > 0)
                     {
