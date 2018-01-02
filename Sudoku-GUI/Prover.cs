@@ -73,6 +73,9 @@ namespace Sudoku
             {
                 return 0;
             }
+            else if(listOfPoints.Count == 0){
+                return 1;
+            }
             else
             {
                 return prove(copyBoard);
