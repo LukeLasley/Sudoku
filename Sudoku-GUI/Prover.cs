@@ -22,6 +22,7 @@ namespace Sudoku
                 for(int i =0; i < emptyPoints.Count; i++)
                 {
                     possiblePoints.Remove(emptyPoints[i]);
+
                 }
             }
 
