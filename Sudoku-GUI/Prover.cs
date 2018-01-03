@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Sudoku
 {
     class Prover
     {
         private Board board;
+        private Board copyBoard;
         private List<Point> emptyPoints;
         private List<Point> possiblePoints;
         static Random rand;
@@ -49,23 +51,24 @@ namespace Sudoku
             else
             {
                 int indexChosen = rand.Next(possiblePoints.Count);
-                Board copyBoard = board;
+                copyBoard = board;
                 copyBoard.remove(possiblePoints[indexChosen]);
                 possiblePoints.RemoveAt(indexChosen);
-                return preProve(copyBoard, copyBoard.getPointList());
+                return preProve();
             }
                 
         }
         //Preprocessor method to clean up some of the points the prover doesnt need to visit.
-        private int preProve(Board copyBoard, List<Point> listOfPoints)
+        private int preProve()
         {
             int leastOptions = copyBoard.getLeastPossibleOptions();
+            List<Point> listOfPoints = copyBoard.getPointList();
             //If there is a point with only one option, it will always be the same answer in every scenario.
             if (leastOptions == 1)
             {
                 Point p = copyBoard.getLeastPossiblePoint();
                 copyBoard.updateBoard(p.Y,p.X,board.getPossibleNumbers(p.Y, p.X)[0]);
-                return preProve(copyBoard, copyBoard.getPointList());
+                return preProve();
 
             }
             //If there is a point with no options, somehow we have created a board with no answer.
@@ -78,14 +81,46 @@ namespace Sudoku
             }
             else
             {
-                return prove(copyBoard);
+                int solutions = 0;
+                List<List<Point>> permutationList = getPermutations(copyBoard.getPointList()).ToList();
+                for(int i = 0; i < permutationList.Count; i++)
+                {
+                    solutions = prove(permutationList[i]);
+                }
+                return solutions;
             }
         }
-
-        private int prove(Board copyBoard)
+        //FIX THIS PART!!!
+        //Doesnt take into account possible duplicate boards
+        private int prove(List<Point> toExplore)
         {
-            HashSet<List<Point>> permutations = getPermutations(copyBoard.getPointList());
-            return 0;
+            Point p = toExplore[0];
+            List<int> pointOptions = copyBoard.getPossibleNumbers(p.Y, p.X);
+            if (pointOptions.Count == 0){
+                return 0;
+            }
+            else if (toExplore.Count == 1)
+            {
+                return pointOptions.Count;
+            }
+            else
+            {
+                int numberOfOPtions = 0;
+
+                for(int i =0; i< pointOptions.Count; i++)
+                {
+                    List<Point> toExploreCopy = toExplore;
+                    toExploreCopy.RemoveAt(0);
+                    copyBoard.updateBoard(p.Y, p.X, pointOptions[i]);
+                    int curOptionCount = prove(toExploreCopy);
+                    for(int j = 0; j < toExploreCopy.Count; j++)
+                    {
+                        copyBoard.remove(toExploreCopy[j]);
+                    }
+                    numberOfOPtions += curOptionCount;
+                }
+                return numberOfOPtions;
+            }
         }
 
         private HashSet<List<Point>> getPermutations(List<Point>points)
