@@ -11,6 +11,7 @@ namespace Sudoku
         private List<Point> emptyPoints;
         private List<Point> possiblePoints;
         static Random rand;
+        private List<List<Tuple<Point, int>>> solutions;
 
         public Prover(Board boardVar)
         {
@@ -18,10 +19,17 @@ namespace Sudoku
             emptyPoints = board.getPointList();
             createListOfPoints();
             rand = new Random();
+            solutions = new List<List<Tuple<Point, int>>>();
             if (emptyPoints.Count != 0) {
                 for(int i =0; i < emptyPoints.Count; i++)
                 {
                     possiblePoints.Remove(emptyPoints[i]);
+                    int removeResult = removePoint();
+                    if(removeResult == -1)
+                    {
+                        i = emptyPoints.Count();
+                    }
+             
 
                 }
             }
@@ -47,7 +55,7 @@ namespace Sudoku
         {
             if (possiblePoints.Count == 0)
             {
-                return 0;
+                return -1;
             }
             else
             {
@@ -86,15 +94,16 @@ namespace Sudoku
                 List<List<Point>> permutationList = getPermutations(copyBoard.getPointList()).ToList();
                 for(int i = 0; i < permutationList.Count; i++)
                 {
-                    solutions = prove(permutationList[i]);
+                    List<Tuple<Point, int>> tried = new List<Tuple<Point, int>>();
+                    solutions = prove(permutationList[i],tried);
                 }
                 return solutions;
             }
         }
-        //FIX THIS PART!!!
         //Doesnt take into account possible duplicate boards
-        private int prove(List<Point> toExplore)
+        private int prove(List<Point> toExplore, List<Tuple<Point,int>>tried)
         {
+
             Point p = toExplore[0];
             List<int> pointOptions = copyBoard.getPossibleNumbers(p.Y, p.X);
             if (pointOptions.Count == 0){
@@ -102,6 +111,12 @@ namespace Sudoku
             }
             else if (toExplore.Count == 1)
             {
+                if(pointOptions.Count == 1)
+                {
+                    Tuple<Point, int> last = new Tuple<Point, int>(p, pointOptions[0]);
+                    tried.Add(last);
+                    solutions.Add(tried);
+                }
                 return pointOptions.Count;
             }
             else
@@ -113,7 +128,9 @@ namespace Sudoku
                     List<Point> toExploreCopy = toExplore;
                     toExploreCopy.RemoveAt(0);
                     copyBoard.updateBoard(p.Y, p.X, pointOptions[i]);
-                    int curOptionCount = prove(toExploreCopy);
+                    Tuple<Point, int> last = new Tuple<Point, int>(p, pointOptions[i]);
+                    tried.Add(last);
+                    int curOptionCount = prove(toExploreCopy,tried);
                     for(int j = 0; j < toExploreCopy.Count; j++)
                     {
                         copyBoard.remove(toExploreCopy[j]);
