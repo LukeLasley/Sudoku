@@ -17,8 +17,9 @@ namespace Sudoku
         {
             board = boardVar;
             emptyPoints = board.getPointList();
+            possiblePoints = new List<Point>();
             createListOfPoints();
-            rand = new Random();
+            /*rand = new Random();
             solutions = new List<List<Tuple<Point, int>>>();
             if (emptyPoints.Count != 0) {
                 for(int i =0; i < emptyPoints.Count; i++)
@@ -32,7 +33,7 @@ namespace Sudoku
              
 
                 }
-            }
+            }*/
 
         }
 
@@ -51,7 +52,7 @@ namespace Sudoku
             }
         }
 
-        public int removePoint()
+        /*public int removePoint()
         {
             if (possiblePoints.Count == 0)
             {
@@ -66,8 +67,8 @@ namespace Sudoku
                 return preProve();
             }
                 
-        }
-        //Preprocessor method to clean up some of the points the prover doesnt need to visit.
+        }*/
+        /*//Preprocessor method to clean up some of the points the prover doesnt need to visit.
         private int preProve()
         {
             int leastOptions = copyBoard.getLeastPossibleOptions();
@@ -91,7 +92,7 @@ namespace Sudoku
             else
             {
                 int solutions = 0;
-                List<List<Point>> permutationList = getPermutations(copyBoard.getPointList()).ToList();
+                //List<List<Point>> permutationList = getPermutations(copyBoard.getPointList()).ToList();
                 for(int i = 0; i < permutationList.Count; i++)
                 {
                     List<Tuple<Point, int>> tried = new List<Tuple<Point, int>>();
@@ -139,11 +140,11 @@ namespace Sudoku
                 }
                 return numberOfOPtions;
             }
-        }
+        }*/
 
-        private HashSet<List<Point>> getPermutations(List<Point>points)
+        public List<List<Point>> getPermutations(List<Point>points)
         {
-            HashSet <List<Point>> permutations = new HashSet<List<Point>>();
+            List <List<Point>> permutations = new List<List<Point>>();
             if(points.Count == 1)
             {
                 permutations.Add(points);
@@ -156,14 +157,15 @@ namespace Sudoku
                     List<Point> pointsRemaining = points;
                     Point curPoint = points[i];
                     pointsRemaining.Remove(curPoint);
-                    HashSet<List<Point>> curPermutations = getPermutations(pointsRemaining);
+                    List<List<Point>> curPermutations = getPermutations(pointsRemaining);
+
                     foreach(List<Point> permute in curPermutations)
                     {
                         List<Point> permuteCopy = permute;
                         permuteCopy.Insert(0, curPoint);
-                        permutations.Add(permuteCopy);
+                        board.write(permutations.Count.ToString());
+                        //permutations.Add(permuteCopy);
                     }
-
                 }
                 return permutations;
             }

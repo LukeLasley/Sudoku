@@ -160,6 +160,10 @@ namespace Sudoku
                 }
             }
         }
+        public void write(String s)
+        {
+            f.updateRichText(s);
+        }
 
     }
 }
@@ -167,4 +171,8 @@ public struct Point
 {
     public int X { get; set; }
     public int Y { get; set; }
+    public string printPoint()
+    {
+        return X + "," + Y + " ";
+    }
 }

@@ -43,6 +43,10 @@ namespace Sudoku
             }
         }
 
+        public void updateRichText(String text)
+        {
+            richTextBox1.Text += text;
+        }
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
 
