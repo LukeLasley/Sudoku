@@ -29,7 +29,7 @@ namespace Sudoku
             p.Y = 5;
             b.remove(p);
             List<List<Point>>permutations = prover.getPermutations(b.getPointList());
-            for(int i = 0; i< permutations.Count; i++)
+            /*for(int i = 0; i< permutations.Count; i++)
             {
                 List<Point> curPermutation = permutations[i];
                 for (int j = 0; j < curPermutation.Count; j++)
@@ -37,7 +37,7 @@ namespace Sudoku
                     f.updateRichText(curPermutation[j].printPoint());
                 }
                 f.updateRichText("\r\n");
-            }
+            }*/
             b.write("A");
             Application.Run(f);
             

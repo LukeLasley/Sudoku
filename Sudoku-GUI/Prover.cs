@@ -158,20 +158,35 @@ namespace Sudoku
                     Point curPoint = points[i];
                     pointsRemaining.Remove(curPoint);
                     List<List<Point>> curPermutations = getPermutations(pointsRemaining);
-
-                    foreach(List<Point> permute in curPermutations)
+                    board.write("Original ");
+                    board.write("\r\n");
+                    foreach (List<Point> permutee in permutations)
                     {
-                        List<Point> permuteCopy = permute;
-                        permuteCopy.Insert(0, curPoint);
-                        foreach (Point p in permuteCopy)
+                        foreach(Point p in permutee)
                         {
                             board.write(p.printPoint());
                             board.write(" , ");
                         }
                         board.write("\r\n");
+
+                    }
+                    foreach (List<Point> permute in curPermutations)
+                    {
+                        List<Point> permuteCopy = permute;
+                        permuteCopy.Insert(0, curPoint);
                         permutations.Add(permuteCopy);
+                        board.write("updating ");
+                        board.write("\r\n");
+                        foreach (List<Point> permutee in permutations)
+                        {
+                            board.write(permutee[0].printPoint());
+                            board.write(" , ");
+                            board.write(permutee[1].printPoint());
+                            board.write("\r\n");
+                        }
                     }
                 }
+
                 return permutations;
             }
         }
