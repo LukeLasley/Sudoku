@@ -12,6 +12,7 @@ namespace Sudoku
         private List<Point> possiblePoints;
         static Random rand;
         private List<List<Tuple<Point, int>>> solutions;
+        public List<List<Point>> possible;
 
         public Prover(Board boardVar)
         {
@@ -19,6 +20,7 @@ namespace Sudoku
             emptyPoints = board.getPointList();
             possiblePoints = new List<Point>();
             createListOfPoints();
+            possible = new List<List<Point>>();
             /*rand = new Random();
             solutions = new List<List<Tuple<Point, int>>>();
             if (emptyPoints.Count != 0) {
@@ -154,36 +156,15 @@ namespace Sudoku
             {
                 for(int i= 0; i < points.Count; i++)
                 {
-                    List<Point> pointsRemaining = points;
+                    List<Point> pointsRemaining = new List<Point>(points);
                     Point curPoint = points[i];
                     pointsRemaining.Remove(curPoint);
                     List<List<Point>> curPermutations = getPermutations(pointsRemaining);
-                    board.write("Original ");
-                    board.write("\r\n");
-                    foreach (List<Point> permutee in permutations)
-                    {
-                        foreach(Point p in permutee)
-                        {
-                            board.write(p.printPoint());
-                            board.write(" , ");
-                        }
-                        board.write("\r\n");
-
-                    }
                     foreach (List<Point> permute in curPermutations)
                     {
-                        List<Point> permuteCopy = permute;
+                        List<Point> permuteCopy = new List<Point>(permute);
                         permuteCopy.Insert(0, curPoint);
                         permutations.Add(permuteCopy);
-                        board.write("updating ");
-                        board.write("\r\n");
-                        foreach (List<Point> permutee in permutations)
-                        {
-                            board.write(permutee[0].printPoint());
-                            board.write(" , ");
-                            board.write(permutee[1].printPoint());
-                            board.write("\r\n");
-                        }
                     }
                 }
 
