@@ -163,8 +163,13 @@ namespace Sudoku
                     {
                         List<Point> permuteCopy = permute;
                         permuteCopy.Insert(0, curPoint);
-                        board.write(permutations.Count.ToString());
-                        //permutations.Add(permuteCopy);
+                        foreach (Point p in permuteCopy)
+                        {
+                            board.write(p.printPoint());
+                            board.write(" , ");
+                        }
+                        board.write("\r\n");
+                        permutations.Add(permuteCopy);
                     }
                 }
                 return permutations;
