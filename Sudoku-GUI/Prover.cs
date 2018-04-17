@@ -37,6 +37,21 @@ namespace Sudoku
             }
         }
 
+        public List<List<int>> getSolutions(List<Point> coordinates, Board tempBoard)
+        {
+            List<List<int>> solutions = new List<List<int>>();
+            if(coordinates.Count == 1)
+            {
+                Point p = coordinates[0];
+                solutions.Add(tempBoard.getPossibleNumbers(p.Y, p.X));
+            }
+            else
+            {
+
+            }
+            return solutions;
+        }
+
         public List<List<Point>> getPermutations(List<Point>points)
         {
             List <List<Point>> permutations = new List<List<Point>>();
