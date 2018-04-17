@@ -165,6 +165,18 @@ namespace Sudoku
             f.updateRichText(s);
         }
 
+        private void setPoints(int[,] points)
+        {
+            this.board = points;
+        }
+
+        public Board clone()
+        {
+            Board clone = new Board(f);
+            clone.setPoints(this.board);
+            return clone;
+        }
+
     }
 }
 public struct Point
