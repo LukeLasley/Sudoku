@@ -18,6 +18,8 @@ namespace Sudoku
             this.f = f;
         }
 
+        //Returns all possible numbers that can go in the box of the coordinate.
+        //TODO: have this take a Point instead of an y and x
         public List<int> getPossibleNumbers(int y, int x)
         {
             var possibleNumbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
@@ -36,6 +38,8 @@ namespace Sudoku
             return possibleNumbers;
         }
 
+        //Gets all numbers currently in row that are not empty
+        //TODO: change to take in a point
         public List<int> getRow(int y)
         {
             var rowList = new List<int>();
@@ -49,7 +53,8 @@ namespace Sudoku
 
             return rowList;
         }
-        //implement remove
+        
+        //Removes number placed in the coordinate
         internal void remove(Point point)
         {
             listOfPoints.Add(point);
@@ -57,6 +62,8 @@ namespace Sudoku
             f.updateCoord(point.Y, point.X, "");
         }
 
+        //Gets all numbers currently in column that are not empty
+        //TODO: change to take in a point
         public List<int> getColumn(int x)
         {
             var rowList = new List<int>();
@@ -70,6 +77,9 @@ namespace Sudoku
             }
             return rowList;
         }
+
+        //Gets all numbers currently in the 3x3 box that are not empty
+        //TODO: change to take in a point
         public List<int> getSquare(int y, int x)
         {
             var xStart = (x / 3) * 3;
@@ -88,7 +98,8 @@ namespace Sudoku
 
             return squaresList;
         }
-
+        //Sets the value to what is at the coordinate.
+        //TODO: change to take in a point
         public void updateBoard(int y, int x, int val)
         {
             var p = new Point();
@@ -98,22 +109,27 @@ namespace Sudoku
             board[y, x] = val;
             f.updateCoord(y, x, val.ToString());
         }
-
+        //Wipes the board
         public void clearBoard()
         {
             board = new int[9, 9];
             createListOfPoints();
         }
+        //Gets what value is at the point
+        //TODO: change to take in point
         public int getNumber(int y, int x)
         {
             return board[y, x];
         }
+
+        //Returns all empty points
         public List<Point> getPointList()
         {
             return listOfPoints;
 
         }
 
+        //Gives the point with the smallest amount of possible values 
         public Point getLeastPossiblePoint()
         {
             var p = listOfPoints[0];
@@ -130,7 +146,7 @@ namespace Sudoku
             }
             return p;
         }
-
+        //TODO: Check what this was for
         public int getLeastPossibleOptions()
         {
             var p = listOfPoints[0];
@@ -147,6 +163,7 @@ namespace Sudoku
             }
             return possiblePointSize;
         }
+        //Creates initial empty list of all points
         public void createListOfPoints()
         {
             for (int i = 0; i < 9; i++)
@@ -160,16 +177,21 @@ namespace Sudoku
                 }
             }
         }
+        //Temporary logging method
+        //TODO: Delete once board creation is complete
         public void write(String s)
         {
             f.updateRichText(s);
         }
 
+        //TODO: Might be cause of board not cloning
         private void setPoints(int[,] points)
         {
             this.board = points;
         }
 
+        //Clones board so edits dont change original board
+        //Still kinda works please investigate it
         public Board clone()
         {
             Board clone = new Board(f);
