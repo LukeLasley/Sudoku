@@ -11,7 +11,6 @@ namespace Sudoku
         private List<Point> emptyPoints;
         private List<Point> possiblePoints;
         static Random rand;
-        private List<List<Tuple<Point, int>>> solutions;
 
         public Prover(Board boardVar)
         {
@@ -19,7 +18,26 @@ namespace Sudoku
             emptyPoints = board.getPointList();
             possiblePoints = new List<Point>();
             createListOfPoints();
-
+            List<List<Point>> permutes = getPermutations(boardVar.getPointList());
+            for(int i = 0;i< permutes.Count; i++)
+            {
+                for(int j = 0;j<permutes[i].Count; j++)
+                {
+                    boardVar.write(permutes[i][j].printPoint());
+                }
+                boardVar.write("\r\n");
+            }
+            Board t = boardVar.clone();
+            List<List<int>> solu = getSolutions(permutes[0], t);
+            for(int i =0; i<solu.Count; i++)
+            {
+                for(int j = 0; j < solu[i].Count; j++)
+                {
+                    boardVar.write(solu[i][j].ToString());
+                    boardVar.write(",");
+                }
+                boardVar.write("\r\n");
+            }
         }
 
         //Duplicate code from board.cs please move
@@ -48,10 +66,20 @@ namespace Sudoku
             else
             {
                 Point p = coordinates[0];
+                List<Point> curCoordinates = new List<Point>(coordinates);
+                curCoordinates.Remove(p);
                 List<int> possibleSolutions = tempBoard.getPossibleNumbers(p.Y,p.X);
                 for(int i =0; i< possibleSolutions.Count; i++)
                 {
-
+                    tempBoard.updateBoard(p.X, p.Y, possibleSolutions[i]);
+                    List<List<int>> recursiveSolutions = getSolutions(curCoordinates, tempBoard);
+                    foreach (List<int> solution in recursiveSolutions)
+                    {
+                        List<int> solutionCopy = new List<int>(solution);
+                        solutionCopy.Insert(0, possibleSolutions[i]);
+                        solutions.Add(solutionCopy);
+                    }
+                    tempBoard.remove(p);
                 }
 
             }
