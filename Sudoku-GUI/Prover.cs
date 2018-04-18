@@ -47,6 +47,12 @@ namespace Sudoku
             }
             else
             {
+                Point p = coordinates[0];
+                List<int> possibleSolutions = tempBoard.getPossibleNumbers(p.Y,p.X);
+                for(int i =0; i< possibleSolutions.Count; i++)
+                {
+
+                }
 
             }
             return solutions;
