@@ -71,7 +71,7 @@ namespace Sudoku
                 List<int> possibleSolutions = tempBoard.getPossibleNumbers(p.Y,p.X);
                 for(int i =0; i< possibleSolutions.Count; i++)
                 {
-                    tempBoard.updateBoard(p.X, p.Y, possibleSolutions[i]);
+                    tempBoard.updateBoard(p.Y, p.X, possibleSolutions[i]);
                     List<List<int>> recursiveSolutions = getSolutions(curCoordinates, tempBoard);
                     foreach (List<int> solution in recursiveSolutions)
                     {

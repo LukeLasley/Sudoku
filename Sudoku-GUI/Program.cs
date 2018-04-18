@@ -26,6 +26,8 @@ namespace Sudoku
             b.remove(p);
             p.Y = 3;
             b.remove(p);
+            p.X = 8;
+            b.remove(p);
             Prover prover = new Prover(b);
             Application.Run(f);
             
