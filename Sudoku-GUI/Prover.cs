@@ -20,6 +20,11 @@ namespace Sudoku
             createListOfPoints();
         }
 
+        public bool solve()
+        {
+            return false;
+        }
+
         public void removePoints(int maxRemoves)
         {
             rand = new Random();
