@@ -53,9 +53,15 @@ namespace Sudoku
 
             return rowList;
         }
-        
+
+        public void removeNoGUI(Point point)
+        {
+            listOfPoints.Add(point);
+            board[point.Y, point.X] = 0;
+        }
+
         //Removes number placed in the coordinate
-        internal void remove(Point point)
+        public void remove(Point point)
         {
             listOfPoints.Add(point);
             board[point.Y, point.X] = 0;
@@ -109,6 +115,13 @@ namespace Sudoku
             board[y, x] = val;
             f.updateCoord(y, x, val.ToString());
         }
+
+        public void updateBoardNoGUI(Point point, int val)
+        {
+            listOfPoints.Remove(point);
+            board[point.Y, point.X] = val;
+        }
+
         //Wipes the board
         public void clearBoard()
         {
@@ -185,7 +198,7 @@ namespace Sudoku
         }
 
         //TODO: Might be cause of board not cloning
-        private void setPoints(int[,] points)
+        public void setPoints(int[,] points)
         {
             this.board = points;
         }
@@ -195,7 +208,8 @@ namespace Sudoku
         public Board clone()
         {
             Board clone = new Board(f);
-            clone.setPoints(this.board);
+            int[,] points = (int[,])this.board.Clone();
+            clone.setPoints(points);
             return clone;
         }
 

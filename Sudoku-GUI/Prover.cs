@@ -7,7 +7,6 @@ namespace Sudoku
     class Prover
     {
         private Board board;
-        private Board copyBoard;
         private List<Point> emptyPoints;
         private List<Point> possiblePoints;
         static Random rand;
@@ -45,7 +44,16 @@ namespace Sudoku
                 }
                 possiblePoints.Remove(p);
             }
-            board.write(possiblePoints.Count.ToString());
+            //board.write(possiblePoints.Count.ToString());
+        }
+
+        internal void removeFromClone()
+        {
+            Board b = board.clone();
+            Point p = new Point();
+            p.X = 3;
+            p.Y = 4;
+            b.removeNoGUI(p);
         }
 
         private bool proveRemove()
