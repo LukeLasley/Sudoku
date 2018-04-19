@@ -18,12 +18,13 @@ namespace Sudoku
             emptyPoints = board.getPointList();
             possiblePoints = new List<Point>();
             createListOfPoints();
+            board.write(proveRemove().ToString());
         }
 
         public bool proveRemove()
         {
             Board boardClone = board.clone();
-            List<List<Point>> curPermutations = getPermutations(boardClone.getPointList());
+            List<List<Point>> curPermutations = getPermutations(board.getPointList());
             List<List<int>> curSolutions = getSolutions(curPermutations[0], boardClone);
             List<Point> permutationToCompare = curPermutations[0];
             for (int i = 1; i < curPermutations.Count; i++)
@@ -49,6 +50,18 @@ namespace Sudoku
 
         private bool comparePermutations(List<Point> permutationA, List<Point> permutationB, List<List<int>> solutionA, List<List<int>> solutionB)
         {
+            if(solutionB.Count == 0 || solutionA.Count == 0)
+            {
+                return true;
+            }
+            for(int i =0; i < permutationA.Count(); i++)
+            {
+                int permutationBIndex = permutationB.IndexOf(permutationA[i]);
+                if(solutionA[0][i] != solutionB[0][permutationBIndex])
+                {
+                    return false;
+                }
+            }
             return true;
         }
 
