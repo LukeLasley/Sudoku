@@ -18,10 +18,32 @@ namespace Sudoku
             emptyPoints = board.getPointList();
             possiblePoints = new List<Point>();
             createListOfPoints();
-            board.write(proveRemove().ToString());
         }
 
-        public bool proveRemove()
+        public void removePoints(int maxRemoves)
+        {
+            rand = new Random();
+            int curRemoved = 0;
+            /*while(curRemoved != maxRemoves || possiblePoints.Count != 0)
+            {
+                board.write("working");
+                int randIndex = rand.Next(possiblePoints.Count);
+                Point p = possiblePoints[randIndex];
+                int valueAtP = board.getNumber(p.Y, p.X);
+                board.remove(p);
+                if (proveRemove())
+                {
+                    curRemoved++;
+                }
+                else
+                {
+                    board.updateBoard(p.Y, p.X, valueAtP);
+                }
+                possiblePoints.Remove(p);
+        }*/
+        }
+
+        private bool proveRemove()
         {
             Board boardClone = board.clone();
             List<List<Point>> curPermutations = getPermutations(board.getPointList());

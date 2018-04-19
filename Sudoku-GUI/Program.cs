@@ -22,17 +22,8 @@ namespace Sudoku
             BoardBuilder builder = new BoardBuilder(b);
             builder.populateBoard();
             Point p = new Point();
-            p.X = 2;
-            b.remove(p);
-            p.Y = 3;
-            b.remove(p);
-            p.X = 8;
-            b.remove(p);
-            p.Y = 4;
-            b.remove(p);
-            p.X = 1;
-            b.remove(p);
             Prover prover = new Prover(b);
+            //prover.removePoints(3);
             Application.Run(f);
             
 
