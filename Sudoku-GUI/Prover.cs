@@ -24,9 +24,8 @@ namespace Sudoku
         {
             rand = new Random();
             int curRemoved = 0;
-            /*while(curRemoved != maxRemoves || possiblePoints.Count != 0)
+            while(curRemoved != maxRemoves && possiblePoints.Count != 0)
             {
-                board.write("working");
                 int randIndex = rand.Next(possiblePoints.Count);
                 Point p = possiblePoints[randIndex];
                 int valueAtP = board.getNumber(p.Y, p.X);
@@ -40,7 +39,8 @@ namespace Sudoku
                     board.updateBoard(p.Y, p.X, valueAtP);
                 }
                 possiblePoints.Remove(p);
-        }*/
+            }
+            board.write(possiblePoints.Count.ToString());
         }
 
         private bool proveRemove()
