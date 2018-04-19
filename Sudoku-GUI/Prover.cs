@@ -19,32 +19,41 @@ namespace Sudoku
             possiblePoints = new List<Point>();
             createListOfPoints();
             Random rand = new Random();
-            IEnumerable<Point> threeRandom = possiblePoints.OrderBy(x => rand.Next()).Take(2);
+            IEnumerable<Point> threeRandom = possiblePoints.OrderBy(x => rand.Next()).Take(40);
             foreach(Point p in threeRandom)
             {
                 board.remove(p);
             }
-            //preSolve();
+            preSolve();
         }
 
-        /*private void preSolve()
+        private void preSolve()
         {
             boardClone = board.clone();
             List<Point> unsolved = new List<Point>(board.getPointList());
             bool iterationWithSolution = true;
+            int i = 1;
             while(iterationWithSolution){
+                board.write("iteration: " + i);
                 iterationWithSolution = false;
+                List<Point> notRemoved = new List<Point>();
                 foreach (Point p in unsolved)
                 {
-                    List<int> possibleValues = boardClone.getPossibleNumbers(p.Y,p.X);
+                    List<int> possibleValues = board.getPossibleNumbers(p);
                     if (possibleValues.Count == 1){
                         iterationWithSolution = true;
-                        board.updateBoard(p.Y,p.X, possibleValues[0]);        
+                        board.updateBoard(p, possibleValues[0]);
+                    }
+                    else
+                    {
+                        notRemoved.Add(p);
                     }
                 }
+                unsolved = new List<Point>(notRemoved);
+                i++;
             }
 
-        }*/
+        }
 
         public bool solve()
         {
