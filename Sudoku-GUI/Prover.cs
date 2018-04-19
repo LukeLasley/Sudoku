@@ -18,26 +18,38 @@ namespace Sudoku
             emptyPoints = board.getPointList();
             possiblePoints = new List<Point>();
             createListOfPoints();
-            List<List<Point>> permutes = getPermutations(boardVar.getPointList());
-            for(int i = 0;i< permutes.Count; i++)
+        }
+
+        public bool proveRemove()
+        {
+            Board boardClone = board.clone();
+            List<List<Point>> curPermutations = getPermutations(boardClone.getPointList());
+            List<List<int>> curSolutions = getSolutions(curPermutations[0], boardClone);
+            List<Point> permutationToCompare = curPermutations[0];
+            for (int i = 1; i < curPermutations.Count; i++)
             {
-                for(int j = 0;j<permutes[i].Count; j++)
+                List<List<int>> solutionsToCompare = getSolutions(curPermutations[i], boardClone);
+                if(solutionsToCompare.Count > 1)
                 {
-                    boardVar.write(permutes[i][j].printPoint());
+                    return false;
                 }
-                boardVar.write("\r\n");
-            }
-            Board t = boardVar.clone();
-            List<List<int>> solu = getSolutions(permutes[0], t);
-            for(int i =0; i<solu.Count; i++)
-            {
-                for(int j = 0; j < solu[i].Count; j++)
+                if(comparePermutations(permutationToCompare, curPermutations[i], curSolutions, solutionsToCompare) == false)
                 {
-                    boardVar.write(solu[i][j].ToString());
-                    boardVar.write(",");
+                    return false;
                 }
-                boardVar.write("\r\n");
+                if(solutionsToCompare.Count > 0)
+                {
+                    permutationToCompare = new List<Point>(curPermutations[i]);
+                    curSolutions = new List<List<int>>(solutionsToCompare);
+                }
+
             }
+            return true;
+        }
+
+        private bool comparePermutations(List<Point> permutationA, List<Point> permutationB, List<List<int>> solutionA, List<List<int>> solutionB)
+        {
+            return true;
         }
 
         //Duplicate code from board.cs please move
