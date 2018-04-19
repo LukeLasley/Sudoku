@@ -23,12 +23,12 @@ namespace Sudoku
                 while (listOfPoints.Count > 0)
                 {
                     var p = board.getLeastPossiblePoint();
-                    var possibleNumbers = board.getPossibleNumbers(p.Y, p.X);
+                    var possibleNumbers = board.getPossibleNumbers(p);
                     if (possibleNumbers.Count > 0)
                     {
                         var rand = new Random();
                         var index = rand.Next(possibleNumbers.Count);
-                        board.updateBoard(p.Y, p.X, possibleNumbers[index]);
+                        board.updateBoard(p, possibleNumbers[index]);
                         listOfPoints.Remove(p);
                     }
                     else

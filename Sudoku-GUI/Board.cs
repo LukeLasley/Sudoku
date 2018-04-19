@@ -20,12 +20,12 @@ namespace Sudoku
 
         //Returns all possible numbers that can go in the box of the coordinate.
         //TODO: have this take a Point instead of an y and x
-        public List<int> getPossibleNumbers(int y, int x)
+        public List<int> getPossibleNumbers(Point point)
         {
             var possibleNumbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-            var rowNumbs = getRow(y);
-            var colNumbs = getColumn(x);
-            var squareNumbs = getSquare(y, x);
+            var rowNumbs = getRow(point.Y);
+            var colNumbs = getColumn(point.X);
+            var squareNumbs = getSquare(point.Y, point.X);
             rowNumbs.AddRange(colNumbs);
             rowNumbs.AddRange(squareNumbs);
             for (int i = 0; i < rowNumbs.Count; i++)
@@ -106,14 +106,11 @@ namespace Sudoku
         }
         //Sets the value to what is at the coordinate.
         //TODO: change to take in a point
-        public void updateBoard(int y, int x, int val)
+        public void updateBoard(Point point, int val)
         {
-            var p = new Point();
-            p.X = x;
-            p.Y = y;
-            listOfPoints.Remove(p);
-            board[y, x] = val;
-            f.updateCoord(y, x, val.ToString());
+            listOfPoints.Remove(point);
+            board[point.Y, point.X] = val;
+            f.updateCoord(point.Y, point.X, val.ToString());
         }
 
         public void updateBoardNoGUI(Point point, int val)
@@ -130,9 +127,9 @@ namespace Sudoku
         }
         //Gets what value is at the point
         //TODO: change to take in point
-        public int getNumber(int y, int x)
+        public int getNumber(Point point)
         {
-            return board[y, x];
+            return board[point.Y, point.X];
         }
 
         //Returns all empty points
@@ -146,11 +143,11 @@ namespace Sudoku
         public Point getLeastPossiblePoint()
         {
             var p = listOfPoints[0];
-            var possiblePointSize = getPossibleNumbers(p.Y, p.X).Count;
+            var possiblePointSize = getPossibleNumbers(p).Count;
             for (int i = 0; i < listOfPoints.Count; i++)
             {
                 var loopPoint = listOfPoints[i];
-                var loopPointPossibleSize = getPossibleNumbers(loopPoint.Y, loopPoint.X).Count;
+                var loopPointPossibleSize = getPossibleNumbers(loopPoint).Count;
                 if (loopPointPossibleSize < possiblePointSize)
                 {
                     p = loopPoint;
@@ -158,23 +155,6 @@ namespace Sudoku
                 }
             }
             return p;
-        }
-        //TODO: Check what this was for
-        public int getLeastPossibleOptions()
-        {
-            var p = listOfPoints[0];
-            var possiblePointSize = getPossibleNumbers(p.Y, p.X).Count;
-            for (int i = 0; i < listOfPoints.Count; i++)
-            {
-                var loopPoint = listOfPoints[i];
-                var loopPointPossibleSize = getPossibleNumbers(loopPoint.Y, loopPoint.X).Count;
-                if (loopPointPossibleSize < possiblePointSize)
-                {
-                    p = loopPoint;
-                    possiblePointSize = loopPointPossibleSize;
-                }
-            }
-            return possiblePointSize;
         }
         //Creates initial empty list of all points
         public void createListOfPoints()
@@ -197,14 +177,12 @@ namespace Sudoku
             f.updateRichText(s);
         }
 
-        //TODO: Might be cause of board not cloning
         public void setPoints(int[,] points)
         {
             this.board = points;
         }
 
         //Clones board so edits dont change original board
-        //Still kinda works please investigate it
         public Board clone()
         {
             Board clone = new Board(f);

@@ -23,8 +23,7 @@ namespace Sudoku
             builder.populateBoard();
             Point p = new Point();
             Prover prover = new Prover(b);
-            prover.removeFromClone();
-            //prover.removePoints(25);
+            //prover.removePoints(9);
             Application.Run(f);
 
 

@@ -7,6 +7,7 @@ namespace Sudoku
     class Prover
     {
         private Board board;
+        private Board boardClone;
         private List<Point> emptyPoints;
         private List<Point> possiblePoints;
         static Random rand;
@@ -17,7 +18,33 @@ namespace Sudoku
             emptyPoints = board.getPointList();
             possiblePoints = new List<Point>();
             createListOfPoints();
+            Random rand = new Random();
+            IEnumerable<Point> threeRandom = possiblePoints.OrderBy(x => rand.Next()).Take(2);
+            foreach(Point p in threeRandom)
+            {
+                board.remove(p);
+            }
+            //preSolve();
         }
+
+        /*private void preSolve()
+        {
+            boardClone = board.clone();
+            List<Point> unsolved = new List<Point>(board.getPointList());
+            bool iterationWithSolution = true;
+            while(iterationWithSolution){
+                iterationWithSolution = false;
+                foreach (Point p in unsolved)
+                {
+                    List<int> possibleValues = boardClone.getPossibleNumbers(p.Y,p.X);
+                    if (possibleValues.Count == 1){
+                        iterationWithSolution = true;
+                        board.updateBoard(p.Y,p.X, possibleValues[0]);        
+                    }
+                }
+            }
+
+        }*/
 
         public bool solve()
         {
@@ -32,7 +59,7 @@ namespace Sudoku
             {
                 int randIndex = rand.Next(possiblePoints.Count);
                 Point p = possiblePoints[randIndex];
-                int valueAtP = board.getNumber(p.Y, p.X);
+                int valueAtP = board.getNumber(p);
                 board.remove(p);
                 if (proveRemove())
                 {
@@ -40,20 +67,11 @@ namespace Sudoku
                 }
                 else
                 {
-                    board.updateBoard(p.Y, p.X, valueAtP);
+                    board.updateBoard(p, valueAtP);
                 }
                 possiblePoints.Remove(p);
             }
             //board.write(possiblePoints.Count.ToString());
-        }
-
-        internal void removeFromClone()
-        {
-            Board b = board.clone();
-            Point p = new Point();
-            p.X = 3;
-            p.Y = 4;
-            b.removeNoGUI(p);
         }
 
         private bool proveRemove()
@@ -121,17 +139,17 @@ namespace Sudoku
             if(coordinates.Count == 1)
             {
                 Point p = coordinates[0];
-                solutions.Add(tempBoard.getPossibleNumbers(p.Y, p.X));
+                solutions.Add(tempBoard.getPossibleNumbers(p));
             }
             else
             {
                 Point p = coordinates[0];
                 List<Point> curCoordinates = new List<Point>(coordinates);
                 curCoordinates.Remove(p);
-                List<int> possibleSolutions = tempBoard.getPossibleNumbers(p.Y,p.X);
+                List<int> possibleSolutions = tempBoard.getPossibleNumbers(p);
                 for(int i =0; i< possibleSolutions.Count; i++)
                 {
-                    tempBoard.updateBoard(p.Y, p.X, possibleSolutions[i]);
+                    tempBoard.updateBoard(p, possibleSolutions[i]);
                     List<List<int>> recursiveSolutions = getSolutions(curCoordinates, tempBoard);
                     foreach (List<int> solution in recursiveSolutions)
                     {
