@@ -177,17 +177,24 @@ namespace Sudoku
             f.updateRichText(s);
         }
 
-        public void setPoints(int[,] points)
+        private void setPoints(int[,] points)
         {
             this.board = points;
+        }
+
+        private void setPointsList(List<Point> pointList)
+        {
+            this.listOfPoints = pointList;
         }
 
         //Clones board so edits dont change original board
         public Board clone()
         {
             Board clone = new Board(f);
+            List<Point> pointList = new List<Point>(this.listOfPoints);
             int[,] points = (int[,])this.board.Clone();
             clone.setPoints(points);
+            clone.setPointsList(pointList);
             return clone;
         }
 

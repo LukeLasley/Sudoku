@@ -17,9 +17,9 @@ namespace Sudoku
             board = boardVar;
             emptyPoints = board.getPointList();
             possiblePoints = new List<Point>();
-            createListOfPoints();    
-            removePoints(70);
-
+            createListOfPoints();
+            removePoints(75);
+            
         }
 
         private Board preSolve()
@@ -28,15 +28,17 @@ namespace Sudoku
             List<Point> unsolved = new List<Point>(toSolve.getPointList());
             bool iterationWithSolution = true;
             int i = 1;
-            while(iterationWithSolution){
+            while (iterationWithSolution)
+            {
                 iterationWithSolution = false;
                 List<Point> notRemoved = new List<Point>();
                 foreach (Point p in unsolved)
                 {
                     List<int> possibleValues = toSolve.getPossibleNumbers(p);
-                    if (possibleValues.Count == 1){
+                    if (possibleValues.Count == 1)
+                    {
                         iterationWithSolution = true;
-                        toSolve.updateBoard(p, possibleValues[0]);
+                        toSolve.updateBoardNoGUI(p, possibleValues[0]);
                     }
                     else
                     {
@@ -52,7 +54,7 @@ namespace Sudoku
         public bool solve()
         {
             Board toSolve = preSolve();
-            if(toSolve.getPointList().Count == 0)
+            if (toSolve.getPointList().Count == 0)
             {
                 return true;
             }
@@ -65,6 +67,7 @@ namespace Sudoku
             int curRemoved = 0;
             while (curRemoved != maxRemoves && possiblePoints.Count != 0)
             {
+
                 int randIndex = rand.Next(possiblePoints.Count);
                 Point p = possiblePoints[randIndex];
                 int valueAtP = board.getNumber(p);
@@ -75,59 +78,14 @@ namespace Sudoku
                 }
                 else
                 {
-                    board.write("bad");
                     board.updateBoard(p, valueAtP);
                 }
                 possiblePoints.Remove(p);
+
             }
-            //board.write(possiblePoints.Count.ToString());
+            board.write(curRemoved.ToString());
         }
 
-        private bool proveRemove()
-        {
-            Board boardClone = board.clone();
-            List<List<Point>> curPermutations = getPermutations(board.getPointList());
-            List<List<int>> curSolutions = getSolutions(curPermutations[0], boardClone);
-            List<Point> permutationToCompare = curPermutations[0];
-            for (int i = 1; i < curPermutations.Count; i++)
-            {
-                List<List<int>> solutionsToCompare = getSolutions(curPermutations[i], boardClone);
-                if(solutionsToCompare.Count > 1)
-                {
-                    return false;
-                }
-                if(comparePermutations(permutationToCompare, curPermutations[i], curSolutions, solutionsToCompare) == false)
-                {
-                    return false;
-                }
-                if(solutionsToCompare.Count > 0)
-                {
-                    permutationToCompare = new List<Point>(curPermutations[i]);
-                    curSolutions = new List<List<int>>(solutionsToCompare);
-                }
-
-            }
-            return true;
-        }
-
-        private bool comparePermutations(List<Point> permutationA, List<Point> permutationB, List<List<int>> solutionA, List<List<int>> solutionB)
-        {
-            if(solutionB.Count == 0 || solutionA.Count == 0)
-            {
-                return true;
-            }
-            for(int i =0; i < permutationA.Count(); i++)
-            {
-                int permutationBIndex = permutationB.IndexOf(permutationA[i]);
-                if(solutionA[0][i] != solutionB[0][permutationBIndex])
-                {
-                    return false;
-                }
-            }
-            return true;
-        }
-
-        //Duplicate code from board.cs please move
         private void createListOfPoints()
         {
             for (int i = 0; i < 9; i++)
@@ -142,63 +100,5 @@ namespace Sudoku
             }
         }
 
-        public List<List<int>> getSolutions(List<Point> coordinates, Board tempBoard)
-        {
-            List<List<int>> solutions = new List<List<int>>();
-            if(coordinates.Count == 1)
-            {
-                Point p = coordinates[0];
-                solutions.Add(tempBoard.getPossibleNumbers(p));
-            }
-            else
-            {
-                Point p = coordinates[0];
-                List<Point> curCoordinates = new List<Point>(coordinates);
-                curCoordinates.Remove(p);
-                List<int> possibleSolutions = tempBoard.getPossibleNumbers(p);
-                for(int i =0; i< possibleSolutions.Count; i++)
-                {
-                    tempBoard.updateBoard(p, possibleSolutions[i]);
-                    List<List<int>> recursiveSolutions = getSolutions(curCoordinates, tempBoard);
-                    foreach (List<int> solution in recursiveSolutions)
-                    {
-                        List<int> solutionCopy = new List<int>(solution);
-                        solutionCopy.Insert(0, possibleSolutions[i]);
-                        solutions.Add(solutionCopy);
-                    }
-                    tempBoard.remove(p);
-                }
-
-            }
-            return solutions;
-        }
-
-        public List<List<Point>> getPermutations(List<Point>points)
-        {
-            List <List<Point>> permutations = new List<List<Point>>();
-            if(points.Count == 1)
-            {
-                permutations.Add(points);
-                return permutations;
-            }
-            else
-            {
-                for(int i= 0; i < points.Count; i++)
-                {
-                    List<Point> pointsRemaining = new List<Point>(points);
-                    Point curPoint = points[i];
-                    pointsRemaining.Remove(curPoint);
-                    List<List<Point>> curPermutations = getPermutations(pointsRemaining);
-                    foreach (List<Point> permute in curPermutations)
-                    {
-                        List<Point> permuteCopy = new List<Point>(permute);
-                        permuteCopy.Insert(0, curPoint);
-                        permutations.Add(permuteCopy);
-                    }
-                }
-
-                return permutations;
-            }
-        }
     }
 }
