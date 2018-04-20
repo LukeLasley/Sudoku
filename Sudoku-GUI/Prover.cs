@@ -18,11 +18,10 @@ namespace Sudoku
             emptyPoints = board.getPointList();
             possiblePoints = new List<Point>();
             createListOfPoints();
-            removePoints(75);
-            
+            removePoints(64);
         }
-
-        private Board preSolve()
+        //This method takes the board and creates a clone where all the cells that have 1 solution are filled.
+        private Board solve()
         {
             Board toSolve = board.clone();
             List<Point> unsolved = new List<Point>(toSolve.getPointList());
@@ -51,16 +50,6 @@ namespace Sudoku
             return toSolve;
         }
 
-        public bool solve()
-        {
-            Board toSolve = preSolve();
-            if (toSolve.getPointList().Count == 0)
-            {
-                return true;
-            }
-            return false;
-        }
-
         public void removePoints(int maxRemoves)
         {
             rand = new Random();
@@ -72,7 +61,7 @@ namespace Sudoku
                 Point p = possiblePoints[randIndex];
                 int valueAtP = board.getNumber(p);
                 board.remove(p);
-                if (solve())
+                if (solve().getPointList().Count == 0)
                 {
                     curRemoved++;
                 }
@@ -83,7 +72,6 @@ namespace Sudoku
                 possiblePoints.Remove(p);
 
             }
-            board.write(curRemoved.ToString());
         }
 
         private void createListOfPoints()
