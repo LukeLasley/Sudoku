@@ -17,32 +17,26 @@ namespace Sudoku
             board = boardVar;
             emptyPoints = board.getPointList();
             possiblePoints = new List<Point>();
-            createListOfPoints();
-            Random rand = new Random();
-            IEnumerable<Point> threeRandom = possiblePoints.OrderBy(x => rand.Next()).Take(40);
-            foreach(Point p in threeRandom)
-            {
-                board.remove(p);
-            }
-            preSolve();
+            createListOfPoints();    
+            removePoints(70);
+
         }
 
-        private void preSolve()
+        private Board preSolve()
         {
-            boardClone = board.clone();
-            List<Point> unsolved = new List<Point>(board.getPointList());
+            Board toSolve = board.clone();
+            List<Point> unsolved = new List<Point>(toSolve.getPointList());
             bool iterationWithSolution = true;
             int i = 1;
             while(iterationWithSolution){
-                board.write("iteration: " + i);
                 iterationWithSolution = false;
                 List<Point> notRemoved = new List<Point>();
                 foreach (Point p in unsolved)
                 {
-                    List<int> possibleValues = board.getPossibleNumbers(p);
+                    List<int> possibleValues = toSolve.getPossibleNumbers(p);
                     if (possibleValues.Count == 1){
                         iterationWithSolution = true;
-                        board.updateBoard(p, possibleValues[0]);
+                        toSolve.updateBoard(p, possibleValues[0]);
                     }
                     else
                     {
@@ -52,11 +46,16 @@ namespace Sudoku
                 unsolved = new List<Point>(notRemoved);
                 i++;
             }
-
+            return toSolve;
         }
 
         public bool solve()
         {
+            Board toSolve = preSolve();
+            if(toSolve.getPointList().Count == 0)
+            {
+                return true;
+            }
             return false;
         }
 
@@ -64,18 +63,19 @@ namespace Sudoku
         {
             rand = new Random();
             int curRemoved = 0;
-            while(curRemoved != maxRemoves && possiblePoints.Count != 0)
+            while (curRemoved != maxRemoves && possiblePoints.Count != 0)
             {
                 int randIndex = rand.Next(possiblePoints.Count);
                 Point p = possiblePoints[randIndex];
                 int valueAtP = board.getNumber(p);
                 board.remove(p);
-                if (proveRemove())
+                if (solve())
                 {
                     curRemoved++;
                 }
                 else
                 {
+                    board.write("bad");
                     board.updateBoard(p, valueAtP);
                 }
                 possiblePoints.Remove(p);
