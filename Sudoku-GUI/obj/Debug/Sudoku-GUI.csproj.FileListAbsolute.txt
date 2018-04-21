@@ -28,3 +28,4 @@ E:\Sudoku-GUI\Sudoku-GUI\obj\Debug\Sudoku-GUI.csproj.GenerateResource.Cache
 E:\Sudoku-GUI\Sudoku-GUI\obj\Debug\Sudoku-GUI.csproj.CoreCompileInputs.cache
 E:\Sudoku-GUI\Sudoku-GUI\obj\Debug\Sudoku-GUI.exe
 E:\Sudoku-GUI\Sudoku-GUI\obj\Debug\Sudoku-GUI.pdb
+E:\Sudoku-GUI\Sudoku-GUI\obj\Debug\Sudoku.DifficultyChooser.resources

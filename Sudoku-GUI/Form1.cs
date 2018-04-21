@@ -51,6 +51,10 @@ namespace Sudoku
         {
 
         }
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
 
     }
 }

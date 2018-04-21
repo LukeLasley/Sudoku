@@ -7,7 +7,6 @@ namespace Sudoku
     class Prover
     {
         private Board board;
-        private Board boardClone;
         private List<Point> emptyPoints;
         private List<Point> possiblePoints;
         static Random rand;
@@ -18,7 +17,6 @@ namespace Sudoku
             emptyPoints = board.getPointList();
             possiblePoints = new List<Point>();
             createListOfPoints();
-            removePoints(64);
         }
         //This method takes the board and creates a clone where all the cells that have 1 solution are filled.
         private Board solve()
