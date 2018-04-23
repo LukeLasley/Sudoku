@@ -56,8 +56,17 @@ namespace Sudoku
         {
             Control button = (Control)sender;
             if (!notClickable.Contains(button)){
-                iNum.setNotes(gameController, button.Name.ToString());
-                iNum.Show();
+                if (!iNum.IsDisposed)
+                {
+                    iNum.setNotes(gameController, button.Name.ToString());
+                    iNum.Show();
+                }
+                else
+                {
+                    iNum = new InputNumber(gameController, this);
+                    iNum.setNotes(gameController, button.Name.ToString());
+                    iNum.Show();
+                }
             }
             
         }
