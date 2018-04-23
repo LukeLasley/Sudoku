@@ -66,7 +66,11 @@ namespace Sudoku
             listOfPoints.Add(point);
             board[point.Y, point.X] = 0;
             f.updateCoord(point.Y, point.X, "",isUser);
-            f.setButtonClickable(point.X, point.Y);
+            if (!isUser)
+            {
+                f.setButtonClickable(point.X, point.Y);
+            }
+
         }
 
         //Gets all numbers currently in column that are not empty
@@ -111,7 +115,10 @@ namespace Sudoku
             listOfPoints.Remove(point);
             board[point.Y, point.X] = val;
             f.updateCoord(point.Y, point.X, val.ToString(),isUser);
-            f.setButtonNotClickable(point.Y, point.X);
+            if (!isUser)
+            {
+                f.setButtonNotClickable(point.Y, point.X);
+            }
         }
 
         public void updateBoardNoGUI(Point point, int val)

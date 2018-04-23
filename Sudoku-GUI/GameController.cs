@@ -35,13 +35,20 @@ namespace Sudoku
             Point p = new Point();
             p.Y = (int)char.GetNumericValue(curButton[5]);
             p.X = (int)char.GetNumericValue(curButton[6]);
-            int answer = Convert.ToInt32(text);
-            curBoard.updateBoard(p, answer, true);
+            if(text.Length == 0)
+            {
+                curBoard.remove(p, true);
+            }
+            else
+            {
+                int answer = Convert.ToInt32(text);
+                curBoard.updateBoard(p, answer, true);
+            }
         }
 
         public void createEasyGame()
         {
-            prover.removePoints(25);
+            prover.removePoints(35);
             gui.Show();
         }
 
