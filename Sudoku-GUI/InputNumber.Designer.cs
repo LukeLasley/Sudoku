@@ -54,10 +54,11 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 24);
+            this.textBox1.Location = new System.Drawing.Point(12, 33);
+            this.textBox1.MaxLength = 1;
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(37, 38);
+            this.textBox1.Size = new System.Drawing.Size(22, 20);
             this.textBox1.TabIndex = 2;
             // 
             // label1
@@ -71,11 +72,11 @@
             // 
             // saveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(63, 24);
+            this.saveButton.Location = new System.Drawing.Point(40, 33);
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(62, 38);
+            this.saveButton.Size = new System.Drawing.Size(97, 38);
             this.saveButton.TabIndex = 4;
-            this.saveButton.Text = "Save";
+            this.saveButton.Text = "Go";
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -91,6 +92,7 @@
             this.Controls.Add(this.notes);
             this.Name = "InputNumber";
             this.Text = "InputNumber";
+            this.Load += new System.EventHandler(this.InputNumber_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

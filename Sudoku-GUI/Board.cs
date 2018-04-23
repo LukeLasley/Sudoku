@@ -66,6 +66,7 @@ namespace Sudoku
             listOfPoints.Add(point);
             board[point.Y, point.X] = 0;
             f.updateCoord(point.Y, point.X, "");
+            f.setButtonClickable(point.X, point.Y);
         }
 
         //Gets all numbers currently in column that are not empty
@@ -105,12 +106,12 @@ namespace Sudoku
             return squaresList;
         }
         //Sets the value to what is at the coordinate.
-        //TODO: change to take in a point
         public void updateBoard(Point point, int val)
         {
             listOfPoints.Remove(point);
             board[point.Y, point.X] = val;
             f.updateCoord(point.Y, point.X, val.ToString());
+            f.setButtonNotClickable(point.Y, point.X);
         }
 
         public void updateBoardNoGUI(Point point, int val)
@@ -126,7 +127,6 @@ namespace Sudoku
             createListOfPoints();
         }
         //Gets what value is at the point
-        //TODO: change to take in point
         public int getNumber(Point point)
         {
             return board[point.Y, point.X];
@@ -169,12 +169,6 @@ namespace Sudoku
                     listOfPoints.Add(p);
                 }
             }
-        }
-        //Temporary logging method
-        //TODO: Delete once board creation is complete
-        public void write(String s)
-        {
-            f.updateRichText(s);
         }
 
         private void setPoints(int[,] points)

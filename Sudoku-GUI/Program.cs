@@ -15,12 +15,13 @@ namespace Sudoku
         static void Main()
         {
             Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
+            Application.SetCompatibleTextRenderingDefault(true);
             Form1 f = new Form1();
             GameController gameControl = new GameController(f);
+            f.setGameController(gameControl);
             DifficultyChooser difficultyChooser = new DifficultyChooser(gameControl);
             difficultyChooser.Show();
-            Application.Run(difficultyChooser);
+            Application.Run();
 
 
 

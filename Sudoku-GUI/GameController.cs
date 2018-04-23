@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Sudoku
 {
@@ -12,6 +13,7 @@ namespace Sudoku
         private BoardBuilder builder;
         private Prover prover;
         private Form1 gui;
+        private Dictionary<string, string> notesDictionary;
 
         public GameController(Form1 f)
         {
@@ -20,6 +22,7 @@ namespace Sudoku
             builder = new BoardBuilder(curBoard);
             builder.populateBoard();
             prover = new Prover(curBoard);
+            notesDictionary = new Dictionary<string, string>();
         }
 
         public void createEasyGame()
@@ -40,5 +43,9 @@ namespace Sudoku
             gui.Show();
         }
 
+        internal void updateNoteDictionary(string button)
+        {
+            notesDictionary.Add(button, "");
+        }
     }
 }

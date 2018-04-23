@@ -21,5 +21,10 @@ namespace Sudoku
         {
 
         }
+
+        private void InputNumber_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
