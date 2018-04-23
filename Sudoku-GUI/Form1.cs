@@ -29,10 +29,19 @@ namespace Sudoku
         {
 
         }
-        public void updateCoord(int y, int x, String value)
+        public void updateCoord(int y, int x, String value, bool byUser)
         {
             var coordString = "coord" + y + x;
             buttonsDictionary[coordString].Text = value;
+            if (byUser)
+            {
+                buttonsDictionary[coordString].ForeColor = Color.Blue;
+            }
+        }
+
+        internal void write(string s)
+        {
+            textBox1.Text += s;
         }
 
         internal void setInputNumber(InputNumber inputNumber)

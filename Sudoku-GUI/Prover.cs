@@ -58,14 +58,14 @@ namespace Sudoku
                 int randIndex = rand.Next(possiblePoints.Count);
                 Point p = possiblePoints[randIndex];
                 int valueAtP = board.getNumber(p);
-                board.remove(p);
+                board.remove(p,false);
                 if (solve().getPointList().Count == 0)
                 {
                     curRemoved++;
                 }
                 else
                 {
-                    board.updateBoard(p, valueAtP);
+                    board.updateBoard(p, valueAtP,false);
                 }
                 possiblePoints.Remove(p);
 

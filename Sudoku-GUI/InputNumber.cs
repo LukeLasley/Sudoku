@@ -25,6 +25,8 @@ namespace Sudoku
         private void button1_Click(object sender, EventArgs e)
         {
             game.updateNoteDictionary(curButton, notes.Text);
+            //f.write(curButton);
+            game.setCoord(curButton, answer.Text);
             this.Hide();
         }
 
@@ -35,14 +37,10 @@ namespace Sudoku
 
         internal void setNotes(GameController gameController, string button)
         {
+            answer.Clear();
             curButton = button;
             notes.Clear();
             notes.Text += gameController.getNotes(curButton);
-        }
-
-        protected override void OnFormClosing(FormClosingEventArgs e)
-        {
-            this.Hide();
         }
     }
 }

@@ -30,7 +30,7 @@
         {
             this.notes = new System.Windows.Forms.TextBox();
             this.notesLabel = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.answer = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.saveButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -52,14 +52,14 @@
             this.notesLabel.TabIndex = 1;
             this.notesLabel.Text = "NOTES:";
             // 
-            // textBox1
+            // answer
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 33);
-            this.textBox1.MaxLength = 1;
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(22, 20);
-            this.textBox1.TabIndex = 2;
+            this.answer.Location = new System.Drawing.Point(12, 33);
+            this.answer.MaxLength = 1;
+            this.answer.Multiline = true;
+            this.answer.Name = "answer";
+            this.answer.Size = new System.Drawing.Size(22, 20);
+            this.answer.TabIndex = 2;
             // 
             // label1
             // 
@@ -87,7 +87,7 @@
             this.ClientSize = new System.Drawing.Size(149, 177);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.answer);
             this.Controls.Add(this.notesLabel);
             this.Controls.Add(this.notes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -103,7 +103,7 @@
 
         private System.Windows.Forms.TextBox notes;
         private System.Windows.Forms.Label notesLabel;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox answer;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button saveButton;
     }

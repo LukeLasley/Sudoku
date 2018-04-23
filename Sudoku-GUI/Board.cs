@@ -61,11 +61,11 @@ namespace Sudoku
         }
 
         //Removes number placed in the coordinate
-        public void remove(Point point)
+        public void remove(Point point, bool isUser)
         {
             listOfPoints.Add(point);
             board[point.Y, point.X] = 0;
-            f.updateCoord(point.Y, point.X, "");
+            f.updateCoord(point.Y, point.X, "",isUser);
             f.setButtonClickable(point.X, point.Y);
         }
 
@@ -106,11 +106,11 @@ namespace Sudoku
             return squaresList;
         }
         //Sets the value to what is at the coordinate.
-        public void updateBoard(Point point, int val)
+        public void updateBoard(Point point, int val, bool isUser)
         {
             listOfPoints.Remove(point);
             board[point.Y, point.X] = val;
-            f.updateCoord(point.Y, point.X, val.ToString());
+            f.updateCoord(point.Y, point.X, val.ToString(),isUser);
             f.setButtonNotClickable(point.Y, point.X);
         }
 

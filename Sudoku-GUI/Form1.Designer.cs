@@ -111,6 +111,7 @@
             this.coord86 = new System.Windows.Forms.Button();
             this.coord87 = new System.Windows.Forms.Button();
             this.coord88 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -858,11 +859,20 @@
             this.coord88.UseVisualStyleBackColor = true;
             this.coord88.Click += new System.EventHandler(this.event_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(11, 349);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(328, 138);
+            this.textBox1.TabIndex = 82;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(351, 360);
+            this.ClientSize = new System.Drawing.Size(351, 499);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.coord88);
             this.Controls.Add(this.coord87);
             this.Controls.Add(this.coord86);
@@ -951,6 +961,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1038,6 +1049,7 @@
         private System.Windows.Forms.Button coord86;
         private System.Windows.Forms.Button coord87;
         private System.Windows.Forms.Button coord88;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
