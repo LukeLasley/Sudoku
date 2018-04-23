@@ -25,6 +25,11 @@ namespace Sudoku
             notesDictionary = new Dictionary<string, string>();
         }
 
+        internal string getNotes(string button)
+        {
+            return notesDictionary[button];
+        }
+
         public void createEasyGame()
         {
             prover.removePoints(25);
@@ -43,9 +48,9 @@ namespace Sudoku
             gui.Show();
         }
 
-        internal void updateNoteDictionary(string button)
+        internal void updateNoteDictionary(string button, string text)
         {
-            notesDictionary.Add(button, "");
+            notesDictionary[button] = text;
         }
     }
 }

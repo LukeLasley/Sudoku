@@ -14,7 +14,8 @@ namespace Sudoku
     {
         private Dictionary<string,Control> buttonsDictionary;
         private GameController gameController;
-        List<Control> notClickable;
+        private List<Control> notClickable;
+        private InputNumber iNum;       
 
         public Form1()
         {
@@ -34,6 +35,11 @@ namespace Sudoku
             buttonsDictionary[coordString].Text = value;
         }
 
+        internal void setInputNumber(InputNumber inputNumber)
+        {
+            iNum = inputNumber;
+        }
+
         private void updateButtonDictionary()
         {
             foreach (Control control in this.Controls)
@@ -48,8 +54,10 @@ namespace Sudoku
 
         private void event_Click(object sender, EventArgs e)
         {
-            if(!notClickable.Contains((Control)sender)){
-                new InputNumber().Show();
+            Control button = (Control)sender;
+            if (!notClickable.Contains(button)){
+                iNum.setNotes(gameController, button.Name.ToString());
+                iNum.Show();
             }
             
         }
@@ -64,10 +72,9 @@ namespace Sudoku
             gameController = game;
             foreach (Control control in this.Controls)
             {
-                //richTextBox1.Text += control.Name.Substring(0, 4);
                 if (control.GetType() == typeof(Button) && control.Name.Substring(0, 5).Equals("coord"))
                 {
-                    game.updateNoteDictionary(control.Name.ToString());
+                    game.updateNoteDictionary(control.Name.ToString(), "");
                 }
             }
         }

@@ -21,6 +21,8 @@ namespace Sudoku
             f.setGameController(gameControl);
             DifficultyChooser difficultyChooser = new DifficultyChooser(gameControl);
             difficultyChooser.Show();
+            InputNumber inputNumber = new InputNumber(gameControl,f);
+            f.setInputNumber(inputNumber);
             Application.Run();
 
 

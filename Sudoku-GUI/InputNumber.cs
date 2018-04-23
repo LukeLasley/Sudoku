@@ -12,19 +12,37 @@ namespace Sudoku
 {
     public partial class InputNumber : Form
     {
-        public InputNumber()
+        private GameController game;
+        private String curButton;
+        private Form1 f;
+        public InputNumber(GameController gameController, Form1 form)
         {
+            game = gameController;
+            f = form;
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            game.updateNoteDictionary(curButton, notes.Text);
+            this.Hide();
         }
 
         private void InputNumber_Load(object sender, EventArgs e)
         {
 
+        }
+
+        internal void setNotes(GameController gameController, string button)
+        {
+            curButton = button;
+            notes.Clear();
+            notes.Text += gameController.getNotes(curButton);
+        }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            this.Hide();
         }
     }
 }

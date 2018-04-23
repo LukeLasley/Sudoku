@@ -90,6 +90,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.notesLabel);
             this.Controls.Add(this.notes);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "InputNumber";
             this.Text = "InputNumber";
             this.Load += new System.EventHandler(this.InputNumber_Load);
