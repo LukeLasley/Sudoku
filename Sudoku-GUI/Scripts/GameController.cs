@@ -43,8 +43,15 @@ namespace Sudoku
             }
             else
             {
-                int answer = Convert.ToInt32(text);
-                curBoard.updateBoard(p, answer, true);
+                try
+                {
+                    int answer = Convert.ToInt32(text);
+                    curBoard.updateBoard(p, answer, true);
+                }
+                catch(System.FormatException exception)
+                {
+
+                }
             }
         }
 
