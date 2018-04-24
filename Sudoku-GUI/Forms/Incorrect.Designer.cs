@@ -85,7 +85,7 @@
             // 
             // mediumButton
             // 
-            this.mediumButton.Location = new System.Drawing.Point(16, 146);
+            this.mediumButton.Location = new System.Drawing.Point(97, 115);
             this.mediumButton.Name = "mediumButton";
             this.mediumButton.Size = new System.Drawing.Size(75, 23);
             this.mediumButton.TabIndex = 5;
@@ -94,7 +94,7 @@
             // 
             // hardButton
             // 
-            this.hardButton.Location = new System.Drawing.Point(16, 176);
+            this.hardButton.Location = new System.Drawing.Point(178, 115);
             this.hardButton.Name = "hardButton";
             this.hardButton.Size = new System.Drawing.Size(75, 23);
             this.hardButton.TabIndex = 6;
@@ -105,7 +105,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(226, 213);
+            this.ClientSize = new System.Drawing.Size(268, 162);
             this.Controls.Add(this.hardButton);
             this.Controls.Add(this.mediumButton);
             this.Controls.Add(this.easyButton);

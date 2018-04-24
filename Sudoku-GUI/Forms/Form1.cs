@@ -69,12 +69,14 @@ namespace Sudoku
                 if (!iNum.IsDisposed)
                 {
                     iNum.setNotes(gameController, button.Name.ToString());
+                    iNum.resetFocus();
                     iNum.Show();
                 }
                 else
                 {
                     iNum = new InputNumber(gameController, this);
                     iNum.setNotes(gameController, button.Name.ToString());
+                    iNum.resetFocus();
                     iNum.Show();
                 }
             }
@@ -116,7 +118,8 @@ namespace Sudoku
         {
             if (gameController.checkSolution())
             {
-
+                CorrectSolution correct = new CorrectSolution();
+                correct.Show();
             }
             else
             {

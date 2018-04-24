@@ -42,5 +42,9 @@ namespace Sudoku
             notes.Clear();
             notes.Text += gameController.getNotes(curButton);
         }
+        public void resetFocus()
+        {
+            this.ActiveControl = answer;
+        }
     }
 }
