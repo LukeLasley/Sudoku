@@ -32,7 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Sudoku.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\Sudoku.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject />
@@ -51,37 +51,37 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Board.cs" />
-    <Compile Include="BoardBuilder.cs" />
-    <Compile Include="DifficultyChooser.cs">
+    <Compile Include="Scripts\Board.cs" />
+    <Compile Include="Scripts\BoardBuilder.cs" />
+    <Compile Include="Forms\DifficultyChooser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DifficultyChooser.Designer.cs">
+    <Compile Include="Forms\DifficultyChooser.Designer.cs">
       <DependentUpon>DifficultyChooser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="Forms\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="GameController.cs" />
-    <Compile Include="InputNumber.cs">
+    <Compile Include="Scripts\GameController.cs" />
+    <Compile Include="Forms\InputNumber.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InputNumber.Designer.cs">
+    <Compile Include="Forms\InputNumber.Designer.cs">
       <DependentUpon>InputNumber.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="Scripts\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Prover.cs" />
-    <EmbeddedResource Include="DifficultyChooser.resx">
+    <Compile Include="Scripts\Prover.cs" />
+    <EmbeddedResource Include="Forms\DifficultyChooser.resx">
       <DependentUpon>DifficultyChooser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
+    <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InputNumber.resx">
+    <EmbeddedResource Include="Forms\InputNumber.resx">
       <DependentUpon>InputNumber.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -111,7 +111,7 @@
     <None Include="Resources\blank_grid.gif" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Sudoku.ico" />
+    <Content Include="Resources\Sudoku.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

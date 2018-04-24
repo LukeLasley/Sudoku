@@ -110,5 +110,10 @@ namespace Sudoku
             Control button = buttonsDictionary[coordString];
             notClickable.Add(button);
         }
+
+        private void solutionChecker_Click(object sender, EventArgs e)
+        {
+            gameController.checkSolution();
+        }
     }
 }

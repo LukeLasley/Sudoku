@@ -112,6 +112,7 @@
             this.coord87 = new System.Windows.Forms.Button();
             this.coord88 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.solutionChecker = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -864,14 +865,25 @@
             this.textBox1.Location = new System.Drawing.Point(11, 349);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(328, 138);
+            this.textBox1.Size = new System.Drawing.Size(328, 102);
             this.textBox1.TabIndex = 82;
+            // 
+            // solutionChecker
+            // 
+            this.solutionChecker.Location = new System.Drawing.Point(11, 457);
+            this.solutionChecker.Name = "solutionChecker";
+            this.solutionChecker.Size = new System.Drawing.Size(328, 30);
+            this.solutionChecker.TabIndex = 83;
+            this.solutionChecker.Text = "Check Solution";
+            this.solutionChecker.UseVisualStyleBackColor = true;
+            this.solutionChecker.Click += new System.EventHandler(this.solutionChecker_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(351, 499);
+            this.Controls.Add(this.solutionChecker);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.coord88);
             this.Controls.Add(this.coord87);
@@ -1050,6 +1062,7 @@
         private System.Windows.Forms.Button coord87;
         private System.Windows.Forms.Button coord88;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button solutionChecker;
     }
 }
 

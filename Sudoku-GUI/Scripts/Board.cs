@@ -183,6 +183,11 @@ namespace Sudoku
             this.board = points;
         }
 
+        public int[,] getPoints()
+        {
+            return this.board;
+        }
+
         private void setPointsList(List<Point> pointList)
         {
             this.listOfPoints = pointList;
