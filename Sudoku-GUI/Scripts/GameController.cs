@@ -24,9 +24,9 @@ namespace Sudoku
             builder.populateBoard();
             solution = (int[,])curBoard.getPoints().Clone();
             prover = new Prover(curBoard);
+            //the notesDictionary is where the notes for each box is stored
             notesDictionary = new Dictionary<string, string>();
         }
-
         internal string getNotes(string button)
         {
             return notesDictionary[button];
@@ -43,6 +43,7 @@ namespace Sudoku
             }
             else
             {
+                //Try catch needed to catch if user inputs non number. If it catches it then just ignore what the user put in. 
                 try
                 {
                     int answer = Convert.ToInt32(text);
@@ -54,7 +55,7 @@ namespace Sudoku
                 }
             }
         }
-
+        //Following methods create a game by removing a set amount of boxes
         public void createEasyGame()
         {
             prover.removePoints(35);
@@ -66,7 +67,7 @@ namespace Sudoku
             prover.removePoints(45);
             gui.Show();
         }
-
+        //Removing 64 is the max amount of boxes you can remove, any more will cause the puzzle to lose its single solution
         public void createHardGame()
         {
             prover.removePoints(64);
@@ -78,6 +79,7 @@ namespace Sudoku
             notesDictionary[button] = text;
         }
 
+        //compares the original board solution to the solution placed in the current board.
         public bool checkSolution()
         {
             int[,] curAnswer = curBoard.getPoints();

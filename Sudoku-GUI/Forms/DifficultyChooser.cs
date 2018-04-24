@@ -24,7 +24,7 @@ namespace Sudoku
         {
 
         }
-
+        //each of these methods tell the game manager what difficulty the user selected then hides
         private void easyButton_Click(object sender, EventArgs e)
         {
             game.createEasyGame();
@@ -41,11 +41,6 @@ namespace Sudoku
         {
             game.createMediumGame();
             this.Hide();
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -19,7 +19,6 @@ namespace Sudoku
         }
 
         //Returns all possible numbers that can go in the box of the coordinate.
-        //TODO: have this take a Point instead of an y and x
         public List<int> getPossibleNumbers(Point point)
         {
             var possibleNumbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
@@ -38,8 +37,7 @@ namespace Sudoku
             return possibleNumbers;
         }
 
-        //Gets all numbers currently in row that are not empty
-        //TODO: change to take in a point
+        //Gets all numbers currently in row that are not 0
         public List<int> getRow(int y)
         {
             var rowList = new List<int>();
@@ -53,14 +51,14 @@ namespace Sudoku
 
             return rowList;
         }
-
+        //Removes the number from the box but doesnt change the GUI. Needed so that clones wont edit GUI.
         public void removeNoGUI(Point point)
         {
             listOfPoints.Add(point);
             board[point.Y, point.X] = 0;
         }
 
-        //Removes number placed in the coordinate
+        //Removes number placed in the box
         public void remove(Point point, bool isUser)
         {
             listOfPoints.Add(point);
@@ -74,7 +72,6 @@ namespace Sudoku
         }
 
         //Gets all numbers currently in column that are not empty
-        //TODO: change to take in a point
         public List<int> getColumn(int x)
         {
             var rowList = new List<int>();
@@ -109,7 +106,7 @@ namespace Sudoku
 
             return squaresList;
         }
-        //Sets the value to what is at the coordinate.
+        //Sets the value to what is at the box.
         public void updateBoard(Point point, int val, bool isUser)
         {
             listOfPoints.Remove(point);
@@ -120,7 +117,7 @@ namespace Sudoku
                 f.setButtonNotClickable(point.Y, point.X);
             }
         }
-
+        //Updates the box with the number but doesnt change the GUI. Needed so that clones wont edit GUI.
         public void updateBoardNoGUI(Point point, int val)
         {
             listOfPoints.Remove(point);
@@ -133,20 +130,20 @@ namespace Sudoku
             board = new int[9, 9];
             createListOfPoints();
         }
-        //Gets what value is at the point
+        //Gets what value is at the box
         public int getNumber(Point point)
         {
             return board[point.Y, point.X];
         }
 
-        //Returns all empty points
+        //Returns all empty box
         public List<Point> getPointList()
         {
             return listOfPoints;
 
         }
 
-        //Gives the point with the smallest amount of possible values 
+        //Gives the box with the smallest amount of possible values 
         public Point getLeastPossiblePoint()
         {
             var p = listOfPoints[0];
@@ -163,7 +160,7 @@ namespace Sudoku
             }
             return p;
         }
-        //Creates initial empty list of all points
+        //Creates initial empty list of all box
         public void createListOfPoints()
         {
             for (int i = 0; i < 9; i++)

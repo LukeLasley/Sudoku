@@ -21,11 +21,10 @@ namespace Sudoku
             f = form;
             InitializeComponent();
         }
-
+        //button to save what the user input
         private void button1_Click(object sender, EventArgs e)
         {
             game.updateNoteDictionary(curButton, notes.Text);
-            //f.write(curButton);
             game.setCoord(curButton, answer.Text);
             this.Hide();
         }
@@ -42,6 +41,7 @@ namespace Sudoku
             notes.Clear();
             notes.Text += gameController.getNotes(curButton);
         }
+        //makes sure that the number input textbox is always in focus when this form pops up
         public void resetFocus()
         {
             this.ActiveControl = answer;

@@ -30,6 +30,8 @@ namespace Sudoku
         {
 
         }
+
+        //updates the box in the gui. If done by user set the text to blue so they know which numbers they can edit
         public void updateCoord(int y, int x, String value, bool byUser)
         {
             var coordString = "coord" + y + x;
@@ -39,7 +41,7 @@ namespace Sudoku
                 buttonsDictionary[coordString].ForeColor = Color.Blue;
             }
         }
-
+        //currently used for debugging
         internal void write(string s)
         {
             textBox1.Text += s;
@@ -49,7 +51,7 @@ namespace Sudoku
         {
             iNum = inputNumber;
         }
-
+        //simple way of mapping each button that corresponds to a box to a string version so outside classes can reference it
         private void updateButtonDictionary()
         {
             foreach (Control control in this.Controls)
@@ -62,16 +64,20 @@ namespace Sudoku
             }
         }
 
+        //catchall for each of the box buttons, since they all work the same
         private void event_Click(object sender, EventArgs e)
         {
             Control button = (Control)sender;
+            //only if the number in the box was placed in there by the user
             if (!notClickable.Contains(button)){
+                //bring up the input number form and update its notes
                 if (!iNum.IsDisposed)
                 {
                     iNum.setNotes(gameController, button.Name.ToString());
                     iNum.resetFocus();
                     iNum.Show();
                 }
+                //if the user doesnt click go button and clicks X the iNum form is gone create a new one
                 else
                 {
                     iNum = new InputNumber(gameController, this);
@@ -82,7 +88,7 @@ namespace Sudoku
             }
             
         }
-
+        //was running into the program not exiting when the x of this form was closed had to override
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             Application.Exit();
@@ -100,13 +106,14 @@ namespace Sudoku
             }
         }
 
+        //method for when the program is building the board it only lets the empty squares be clickable so user cant edit program placed numbers
         internal void setButtonClickable(int x, int y)
         {
             var coordString = "coord" + y + x;
             Control button = buttonsDictionary[coordString];
             notClickable.Remove(button);
         }
-
+        //allows a button to be clicked and a number input form will be brought up
         internal void setButtonNotClickable(int y, int x)
         {
             var coordString = "coord" + y + x;
@@ -114,14 +121,17 @@ namespace Sudoku
             notClickable.Add(button);
         }
 
+        //checks to see if user solved puzzle
         private void solutionChecker_Click(object sender, EventArgs e)
         {
+            //if they are correct give them the option of a new puzzle
             if (gameController.checkSolution())
             {
                 CorrectSolution correct = new CorrectSolution();
                 correct.Show();
             }
             else
+            //tell them they are incorrect give them an option for a hint, to continue or a new puzzle
             {
                 Incorrect incorrect = new Incorrect();
                 incorrect.Show();
