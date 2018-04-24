@@ -51,6 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\Incorrect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Incorrect.Designer.cs">
+      <DependentUpon>Incorrect.cs</DependentUpon>
+    </Compile>
     <Compile Include="Scripts\Board.cs" />
     <Compile Include="Scripts\BoardBuilder.cs" />
     <Compile Include="Forms\DifficultyChooser.cs">
@@ -80,6 +86,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Incorrect.resx">
+      <DependentUpon>Incorrect.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\InputNumber.resx">
       <DependentUpon>InputNumber.cs</DependentUpon>

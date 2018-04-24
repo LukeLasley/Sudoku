@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sudoku.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -113,7 +114,15 @@ namespace Sudoku
 
         private void solutionChecker_Click(object sender, EventArgs e)
         {
-            gameController.checkSolution();
+            if (gameController.checkSolution())
+            {
+
+            }
+            else
+            {
+                Incorrect incorrect = new Incorrect();
+                incorrect.Show();
+            }
         }
     }
 }
