@@ -35,3 +35,5 @@ C:\Users\llasley\source\repos\Sudoku\Sudoku-GUI\obj\Debug\Sudoku.Forms.CorrectSo
 C:\Users\llasley\source\repos\Sudoku\Sudoku-GUI\obj\Debug\Sudoku.DifficultyChooser.resources
 C:\Users\llasley\source\repos\Sudoku\Sudoku-GUI\obj\Debug\Sudoku.Forms.Incorrect.resources
 C:\Users\llasley\source\repos\Sudoku\Sudoku-GUI\obj\Debug\Sudoku.InputNumber.resources
+C:\Users\llasley\source\repos\Sudoku\Sudoku-GUI\obj\Debug\Sudoku.Forms.HintScreen.resources
+C:\Users\llasley\source\repos\Sudoku\Sudoku-GUI\obj\Debug\Sudoku.Forms.HowToPlayScreen.resources

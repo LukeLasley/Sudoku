@@ -22,7 +22,9 @@ namespace Sudoku.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            HintScreen hint = new HintScreen(gameController);
+            hint.Show();
+            this.Dispose();
         }
 
         private void Incorrect_Load(object sender, EventArgs e)

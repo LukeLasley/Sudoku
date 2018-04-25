@@ -17,6 +17,7 @@ namespace Sudoku
         private InputNumber inputNumber;
         private DifficultyChooser difficultyChooser;
         private int[,] solution;
+        private int hintsRemaining;
 
         public GameController()
         {
@@ -25,6 +26,7 @@ namespace Sudoku
             difficultyChooser.Show();
             inputNumber = new InputNumber(this, gui);
             gui.setInputNumber(inputNumber);
+            hintsRemaining = 0;
         }
 
         internal void build()
@@ -86,18 +88,21 @@ namespace Sudoku
         {
             prover.removePoints(35);
             gui.Show();
+            hintsRemaining = 5;
         }
 
         public void createMediumGame()
         {
             prover.removePoints(45);
             gui.Show();
+            hintsRemaining = 4;
         }
         //Removing 64 is the max amount of boxes you can remove, any more will cause the puzzle to lose its single solution
         public void createHardGame()
         {
             prover.removePoints(64);
             gui.Show();
+            hintsRemaining = 3;
         }
 
         internal void updateNoteDictionary(string button, string text)
@@ -119,6 +124,11 @@ namespace Sudoku
                 }
             }
             return true;
+        }
+
+        internal int getHints()
+        {
+            return hintsRemaining;
         }
     }
 }

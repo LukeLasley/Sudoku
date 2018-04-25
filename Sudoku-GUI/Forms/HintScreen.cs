@@ -12,9 +12,33 @@ namespace Sudoku.Forms
 {
     public partial class HintScreen : Form
     {
-        public HintScreen()
+        private int hintsRemaining;
+        public HintScreen(GameController gameController)
         {
+            hintsRemaining = gameController.getHints();
             InitializeComponent();
+            hintlabel.Text = "You have " + hintsRemaining + " hints remaining.";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (hintsRemaining > 0)
+            {
+
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if(hintsRemaining > 0)
+            {
+
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

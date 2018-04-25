@@ -152,5 +152,11 @@ namespace Sudoku
         {
             checkSolution();
         }
+
+        private void hintToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HintScreen hint = new HintScreen(gameController);
+            hint.Show();
+        }
     }
 }

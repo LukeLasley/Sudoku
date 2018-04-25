@@ -57,6 +57,18 @@
     <Compile Include="Forms\CorrectSolution.Designer.cs">
       <DependentUpon>CorrectSolution.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\HintScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HintScreen.Designer.cs">
+      <DependentUpon>HintScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\HowToPlayScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HowToPlayScreen.Designer.cs">
+      <DependentUpon>HowToPlayScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Incorrect.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +107,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HintScreen.resx">
+      <DependentUpon>HintScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HowToPlayScreen.resx">
+      <DependentUpon>HowToPlayScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Incorrect.resx">
       <DependentUpon>Incorrect.cs</DependentUpon>

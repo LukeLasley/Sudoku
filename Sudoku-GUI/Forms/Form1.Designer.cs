@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.coord00 = new System.Windows.Forms.Button();
             this.coord01 = new System.Windows.Forms.Button();
             this.coord02 = new System.Windows.Forms.Button();
@@ -119,19 +118,10 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newPuzzleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.savePuzzleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.savePuzzleToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Sudoku.Properties.Resources.blank_grid;
-            this.pictureBox1.Location = new System.Drawing.Point(8, 29);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(328, 331);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // coord00
             // 
@@ -903,6 +893,7 @@
             this.hintToolStripMenuItem.Name = "hintToolStripMenuItem";
             this.hintToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.hintToolStripMenuItem.Text = "Hint";
+            this.hintToolStripMenuItem.Click += new System.EventHandler(this.hintToolStripMenuItem_Click);
             // 
             // howToPlayToolStripMenuItem
             // 
@@ -914,8 +905,7 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newPuzzleToolStripMenuItem,
-            this.savePuzzleToolStripMenuItem,
-            this.savePuzzleToolStripMenuItem1});
+            this.savePuzzleToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
@@ -934,11 +924,14 @@
             this.savePuzzleToolStripMenuItem.Text = "Check Solution";
             this.savePuzzleToolStripMenuItem.Click += new System.EventHandler(this.savePuzzleToolStripMenuItem_Click);
             // 
-            // savePuzzleToolStripMenuItem1
+            // pictureBox1
             // 
-            this.savePuzzleToolStripMenuItem1.Name = "savePuzzleToolStripMenuItem1";
-            this.savePuzzleToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.savePuzzleToolStripMenuItem1.Text = "Save Puzzle";
+            this.pictureBox1.Image = global::Sudoku.Properties.Resources.blank_grid;
+            this.pictureBox1.Location = new System.Drawing.Point(8, 29);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(328, 331);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // Form1
             // 
@@ -1034,9 +1027,9 @@
             this.Name = "Form1";
             this.Text = "Sudoku";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1134,7 +1127,6 @@
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newPuzzleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem savePuzzleToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem savePuzzleToolStripMenuItem1;
     }
 }
 
