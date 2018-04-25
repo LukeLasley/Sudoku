@@ -12,14 +12,43 @@ namespace Sudoku.Forms
 {
     public partial class Incorrect : Form
     {
-        public Incorrect()
+        GameController gameController;
+
+        public Incorrect(GameController game)
         {
+            gameController = game;
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Incorrect_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void easyButton_Click(object sender, EventArgs e)
+        {
+            gameController.rebuild();
+            gameController.createEasyGame();
+            this.Dispose();
+        }
+
+        private void mediumButton_Click(object sender, EventArgs e)
+        {
+            gameController.rebuild();
+            gameController.createMediumGame();
+            this.Dispose();
+        }
+
+        private void hardButton_Click(object sender, EventArgs e)
+        {
+            gameController.rebuild();
+            gameController.createHardGame();
+            this.Dispose();
         }
     }
 }

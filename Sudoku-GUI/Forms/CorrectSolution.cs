@@ -12,9 +12,32 @@ namespace Sudoku.Forms
 {
     public partial class CorrectSolution : Form
     {
-        public CorrectSolution()
+        GameController gameController;
+        public CorrectSolution(GameController game)
         {
+            gameController = game;
             InitializeComponent();
+        }
+
+        private void easyButton_Click(object sender, EventArgs e)
+        {
+            gameController.rebuild();
+            gameController.createEasyGame();
+            this.Dispose();
+        }
+
+        private void mediumButton_Click(object sender, EventArgs e)
+        {
+            gameController.rebuild();
+            gameController.createMediumGame();
+            this.Dispose();
+        }
+
+        private void hardButton_Click(object sender, EventArgs e)
+        {
+            gameController.rebuild();
+            gameController.createHardGame();
+            this.Dispose();
         }
     }
 }

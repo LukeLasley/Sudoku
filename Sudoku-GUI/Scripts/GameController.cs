@@ -14,19 +14,39 @@ namespace Sudoku
         private Prover prover;
         private Form1 gui;
         private Dictionary<string, string> notesDictionary;
+        private InputNumber inputNumber;
         private int[,] solution;
 
-        public GameController(Form1 f)
+        public GameController()
         {
-            gui = f;
+            build();
+            DifficultyChooser difficultyChooser = new DifficultyChooser(this);
+            difficultyChooser.Show();
+            inputNumber = new InputNumber(this, gui);
+            gui.setInputNumber(inputNumber);
+        }
+
+        internal void build()
+        {
+            notesDictionary = new Dictionary<string, string>();
+            gui = new Form1();
+            gui.setGameController(this);
             curBoard = new Board(gui);
             builder = new BoardBuilder(curBoard);
             builder.populateBoard();
             solution = (int[,])curBoard.getPoints().Clone();
             prover = new Prover(curBoard);
             //the notesDictionary is where the notes for each box is stored
-            notesDictionary = new Dictionary<string, string>();
+            
         }
+        //wipe old gui and restart. it is easier than trying to carefully clear what the user is already done with.
+        internal void rebuild()
+        {
+            gui.Dispose();
+            build();
+            gui.setInputNumber(inputNumber);
+        }
+
         internal string getNotes(string button)
         {
             return notesDictionary[button];

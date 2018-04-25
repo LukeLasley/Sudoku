@@ -127,13 +127,13 @@ namespace Sudoku
             //if they are correct give them the option of a new puzzle
             if (gameController.checkSolution())
             {
-                CorrectSolution correct = new CorrectSolution();
+                CorrectSolution correct = new CorrectSolution(gameController);
                 correct.Show();
             }
             else
             //tell them they are incorrect give them an option for a hint, to continue or a new puzzle
             {
-                Incorrect incorrect = new Incorrect();
+                Incorrect incorrect = new Incorrect(gameController);
                 incorrect.Show();
             }
         }
