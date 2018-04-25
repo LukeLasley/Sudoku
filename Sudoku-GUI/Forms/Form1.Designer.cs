@@ -111,15 +111,23 @@
             this.coord86 = new System.Windows.Forms.Button();
             this.coord87 = new System.Windows.Forms.Button();
             this.coord88 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.solutionChecker = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hintToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.howToPlayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newPuzzleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.savePuzzleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.savePuzzleToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Sudoku.Properties.Resources.blank_grid;
-            this.pictureBox1.Location = new System.Drawing.Point(11, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(8, 29);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(328, 331);
             this.pictureBox1.TabIndex = 0;
@@ -127,7 +135,7 @@
             // 
             // coord00
             // 
-            this.coord00.Location = new System.Drawing.Point(15, 16);
+            this.coord00.Location = new System.Drawing.Point(12, 33);
             this.coord00.Name = "coord00";
             this.coord00.Size = new System.Drawing.Size(33, 33);
             this.coord00.TabIndex = 1;
@@ -136,7 +144,7 @@
             // 
             // coord01
             // 
-            this.coord01.Location = new System.Drawing.Point(50, 16);
+            this.coord01.Location = new System.Drawing.Point(47, 33);
             this.coord01.Name = "coord01";
             this.coord01.Size = new System.Drawing.Size(34, 33);
             this.coord01.TabIndex = 2;
@@ -145,7 +153,7 @@
             // 
             // coord02
             // 
-            this.coord02.Location = new System.Drawing.Point(86, 16);
+            this.coord02.Location = new System.Drawing.Point(83, 33);
             this.coord02.Name = "coord02";
             this.coord02.Size = new System.Drawing.Size(33, 33);
             this.coord02.TabIndex = 3;
@@ -154,7 +162,7 @@
             // 
             // coord03
             // 
-            this.coord03.Location = new System.Drawing.Point(123, 16);
+            this.coord03.Location = new System.Drawing.Point(120, 33);
             this.coord03.Name = "coord03";
             this.coord03.Size = new System.Drawing.Size(33, 33);
             this.coord03.TabIndex = 4;
@@ -163,7 +171,7 @@
             // 
             // coord04
             // 
-            this.coord04.Location = new System.Drawing.Point(158, 16);
+            this.coord04.Location = new System.Drawing.Point(155, 33);
             this.coord04.Name = "coord04";
             this.coord04.Size = new System.Drawing.Size(34, 33);
             this.coord04.TabIndex = 5;
@@ -172,7 +180,7 @@
             // 
             // coord05
             // 
-            this.coord05.Location = new System.Drawing.Point(194, 16);
+            this.coord05.Location = new System.Drawing.Point(191, 33);
             this.coord05.Name = "coord05";
             this.coord05.Size = new System.Drawing.Size(33, 33);
             this.coord05.TabIndex = 6;
@@ -181,7 +189,7 @@
             // 
             // coord06
             // 
-            this.coord06.Location = new System.Drawing.Point(231, 16);
+            this.coord06.Location = new System.Drawing.Point(228, 33);
             this.coord06.Name = "coord06";
             this.coord06.Size = new System.Drawing.Size(33, 33);
             this.coord06.TabIndex = 7;
@@ -190,7 +198,7 @@
             // 
             // coord07
             // 
-            this.coord07.Location = new System.Drawing.Point(266, 16);
+            this.coord07.Location = new System.Drawing.Point(263, 33);
             this.coord07.Name = "coord07";
             this.coord07.Size = new System.Drawing.Size(34, 33);
             this.coord07.TabIndex = 8;
@@ -199,7 +207,7 @@
             // 
             // coord08
             // 
-            this.coord08.Location = new System.Drawing.Point(302, 16);
+            this.coord08.Location = new System.Drawing.Point(299, 33);
             this.coord08.Name = "coord08";
             this.coord08.Size = new System.Drawing.Size(33, 33);
             this.coord08.TabIndex = 9;
@@ -209,7 +217,7 @@
             // 
             // coord10
             // 
-            this.coord10.Location = new System.Drawing.Point(15, 51);
+            this.coord10.Location = new System.Drawing.Point(12, 68);
             this.coord10.Name = "coord10";
             this.coord10.Size = new System.Drawing.Size(33, 34);
             this.coord10.TabIndex = 10;
@@ -218,7 +226,7 @@
             // 
             // coord11
             // 
-            this.coord11.Location = new System.Drawing.Point(50, 51);
+            this.coord11.Location = new System.Drawing.Point(47, 68);
             this.coord11.Name = "coord11";
             this.coord11.Size = new System.Drawing.Size(34, 34);
             this.coord11.TabIndex = 11;
@@ -227,7 +235,7 @@
             // 
             // coord12
             // 
-            this.coord12.Location = new System.Drawing.Point(86, 51);
+            this.coord12.Location = new System.Drawing.Point(83, 68);
             this.coord12.Name = "coord12";
             this.coord12.Size = new System.Drawing.Size(33, 34);
             this.coord12.TabIndex = 12;
@@ -236,7 +244,7 @@
             // 
             // coord13
             // 
-            this.coord13.Location = new System.Drawing.Point(123, 51);
+            this.coord13.Location = new System.Drawing.Point(120, 68);
             this.coord13.Name = "coord13";
             this.coord13.Size = new System.Drawing.Size(33, 34);
             this.coord13.TabIndex = 13;
@@ -245,7 +253,7 @@
             // 
             // coord14
             // 
-            this.coord14.Location = new System.Drawing.Point(158, 51);
+            this.coord14.Location = new System.Drawing.Point(155, 68);
             this.coord14.Name = "coord14";
             this.coord14.Size = new System.Drawing.Size(34, 34);
             this.coord14.TabIndex = 14;
@@ -254,7 +262,7 @@
             // 
             // coord15
             // 
-            this.coord15.Location = new System.Drawing.Point(194, 51);
+            this.coord15.Location = new System.Drawing.Point(191, 68);
             this.coord15.Name = "coord15";
             this.coord15.Size = new System.Drawing.Size(33, 34);
             this.coord15.TabIndex = 15;
@@ -263,7 +271,7 @@
             // 
             // coord16
             // 
-            this.coord16.Location = new System.Drawing.Point(231, 51);
+            this.coord16.Location = new System.Drawing.Point(228, 68);
             this.coord16.Name = "coord16";
             this.coord16.Size = new System.Drawing.Size(33, 34);
             this.coord16.TabIndex = 16;
@@ -272,7 +280,7 @@
             // 
             // coord17
             // 
-            this.coord17.Location = new System.Drawing.Point(266, 51);
+            this.coord17.Location = new System.Drawing.Point(263, 68);
             this.coord17.Name = "coord17";
             this.coord17.Size = new System.Drawing.Size(34, 34);
             this.coord17.TabIndex = 17;
@@ -281,7 +289,7 @@
             // 
             // coord18
             // 
-            this.coord18.Location = new System.Drawing.Point(302, 51);
+            this.coord18.Location = new System.Drawing.Point(299, 68);
             this.coord18.Name = "coord18";
             this.coord18.Size = new System.Drawing.Size(33, 34);
             this.coord18.TabIndex = 18;
@@ -290,7 +298,7 @@
             // 
             // coord20
             // 
-            this.coord20.Location = new System.Drawing.Point(15, 87);
+            this.coord20.Location = new System.Drawing.Point(12, 104);
             this.coord20.Name = "coord20";
             this.coord20.Size = new System.Drawing.Size(33, 33);
             this.coord20.TabIndex = 19;
@@ -299,7 +307,7 @@
             // 
             // coord21
             // 
-            this.coord21.Location = new System.Drawing.Point(50, 87);
+            this.coord21.Location = new System.Drawing.Point(47, 104);
             this.coord21.Name = "coord21";
             this.coord21.Size = new System.Drawing.Size(34, 33);
             this.coord21.TabIndex = 20;
@@ -308,7 +316,7 @@
             // 
             // coord22
             // 
-            this.coord22.Location = new System.Drawing.Point(86, 87);
+            this.coord22.Location = new System.Drawing.Point(83, 104);
             this.coord22.Name = "coord22";
             this.coord22.Size = new System.Drawing.Size(33, 33);
             this.coord22.TabIndex = 21;
@@ -318,7 +326,7 @@
             // 
             // coord23
             // 
-            this.coord23.Location = new System.Drawing.Point(123, 87);
+            this.coord23.Location = new System.Drawing.Point(120, 104);
             this.coord23.Name = "coord23";
             this.coord23.Size = new System.Drawing.Size(33, 33);
             this.coord23.TabIndex = 22;
@@ -327,7 +335,7 @@
             // 
             // coord24
             // 
-            this.coord24.Location = new System.Drawing.Point(158, 87);
+            this.coord24.Location = new System.Drawing.Point(155, 104);
             this.coord24.Name = "coord24";
             this.coord24.Size = new System.Drawing.Size(34, 33);
             this.coord24.TabIndex = 23;
@@ -336,7 +344,7 @@
             // 
             // coord25
             // 
-            this.coord25.Location = new System.Drawing.Point(194, 87);
+            this.coord25.Location = new System.Drawing.Point(191, 104);
             this.coord25.Name = "coord25";
             this.coord25.Size = new System.Drawing.Size(33, 33);
             this.coord25.TabIndex = 24;
@@ -345,7 +353,7 @@
             // 
             // coord26
             // 
-            this.coord26.Location = new System.Drawing.Point(231, 87);
+            this.coord26.Location = new System.Drawing.Point(228, 104);
             this.coord26.Name = "coord26";
             this.coord26.Size = new System.Drawing.Size(33, 33);
             this.coord26.TabIndex = 25;
@@ -354,7 +362,7 @@
             // 
             // coord27
             // 
-            this.coord27.Location = new System.Drawing.Point(266, 87);
+            this.coord27.Location = new System.Drawing.Point(263, 104);
             this.coord27.Name = "coord27";
             this.coord27.Size = new System.Drawing.Size(34, 33);
             this.coord27.TabIndex = 26;
@@ -363,7 +371,7 @@
             // 
             // coord28
             // 
-            this.coord28.Location = new System.Drawing.Point(302, 87);
+            this.coord28.Location = new System.Drawing.Point(299, 104);
             this.coord28.Name = "coord28";
             this.coord28.Size = new System.Drawing.Size(33, 33);
             this.coord28.TabIndex = 27;
@@ -372,7 +380,7 @@
             // 
             // coord30
             // 
-            this.coord30.Location = new System.Drawing.Point(15, 124);
+            this.coord30.Location = new System.Drawing.Point(12, 141);
             this.coord30.Name = "coord30";
             this.coord30.Size = new System.Drawing.Size(33, 33);
             this.coord30.TabIndex = 28;
@@ -381,7 +389,7 @@
             // 
             // coord31
             // 
-            this.coord31.Location = new System.Drawing.Point(50, 124);
+            this.coord31.Location = new System.Drawing.Point(47, 141);
             this.coord31.Name = "coord31";
             this.coord31.Size = new System.Drawing.Size(34, 33);
             this.coord31.TabIndex = 29;
@@ -390,7 +398,7 @@
             // 
             // coord32
             // 
-            this.coord32.Location = new System.Drawing.Point(85, 124);
+            this.coord32.Location = new System.Drawing.Point(82, 141);
             this.coord32.Name = "coord32";
             this.coord32.Size = new System.Drawing.Size(34, 33);
             this.coord32.TabIndex = 30;
@@ -399,7 +407,7 @@
             // 
             // coord33
             // 
-            this.coord33.Location = new System.Drawing.Point(123, 124);
+            this.coord33.Location = new System.Drawing.Point(120, 141);
             this.coord33.Name = "coord33";
             this.coord33.Size = new System.Drawing.Size(34, 33);
             this.coord33.TabIndex = 31;
@@ -408,7 +416,7 @@
             // 
             // coord34
             // 
-            this.coord34.Location = new System.Drawing.Point(158, 124);
+            this.coord34.Location = new System.Drawing.Point(155, 141);
             this.coord34.Name = "coord34";
             this.coord34.Size = new System.Drawing.Size(34, 33);
             this.coord34.TabIndex = 32;
@@ -417,7 +425,7 @@
             // 
             // coord35
             // 
-            this.coord35.Location = new System.Drawing.Point(193, 124);
+            this.coord35.Location = new System.Drawing.Point(190, 141);
             this.coord35.Name = "coord35";
             this.coord35.Size = new System.Drawing.Size(34, 33);
             this.coord35.TabIndex = 33;
@@ -426,7 +434,7 @@
             // 
             // coord36
             // 
-            this.coord36.Location = new System.Drawing.Point(231, 124);
+            this.coord36.Location = new System.Drawing.Point(228, 141);
             this.coord36.Name = "coord36";
             this.coord36.Size = new System.Drawing.Size(34, 33);
             this.coord36.TabIndex = 34;
@@ -435,7 +443,7 @@
             // 
             // coord37
             // 
-            this.coord37.Location = new System.Drawing.Point(266, 124);
+            this.coord37.Location = new System.Drawing.Point(263, 141);
             this.coord37.Name = "coord37";
             this.coord37.Size = new System.Drawing.Size(34, 33);
             this.coord37.TabIndex = 35;
@@ -444,7 +452,7 @@
             // 
             // coord38
             // 
-            this.coord38.Location = new System.Drawing.Point(301, 124);
+            this.coord38.Location = new System.Drawing.Point(298, 141);
             this.coord38.Name = "coord38";
             this.coord38.Size = new System.Drawing.Size(34, 33);
             this.coord38.TabIndex = 36;
@@ -453,7 +461,7 @@
             // 
             // coord40
             // 
-            this.coord40.Location = new System.Drawing.Point(15, 159);
+            this.coord40.Location = new System.Drawing.Point(12, 176);
             this.coord40.Name = "coord40";
             this.coord40.Size = new System.Drawing.Size(33, 34);
             this.coord40.TabIndex = 37;
@@ -462,7 +470,7 @@
             // 
             // coord41
             // 
-            this.coord41.Location = new System.Drawing.Point(50, 159);
+            this.coord41.Location = new System.Drawing.Point(47, 176);
             this.coord41.Name = "coord41";
             this.coord41.Size = new System.Drawing.Size(34, 34);
             this.coord41.TabIndex = 38;
@@ -472,7 +480,7 @@
             // 
             // coord42
             // 
-            this.coord42.Location = new System.Drawing.Point(85, 159);
+            this.coord42.Location = new System.Drawing.Point(82, 176);
             this.coord42.Name = "coord42";
             this.coord42.Size = new System.Drawing.Size(34, 34);
             this.coord42.TabIndex = 39;
@@ -481,7 +489,7 @@
             // 
             // coord43
             // 
-            this.coord43.Location = new System.Drawing.Point(123, 159);
+            this.coord43.Location = new System.Drawing.Point(120, 176);
             this.coord43.Name = "coord43";
             this.coord43.Size = new System.Drawing.Size(34, 34);
             this.coord43.TabIndex = 40;
@@ -490,7 +498,7 @@
             // 
             // coord44
             // 
-            this.coord44.Location = new System.Drawing.Point(158, 159);
+            this.coord44.Location = new System.Drawing.Point(155, 176);
             this.coord44.Name = "coord44";
             this.coord44.Size = new System.Drawing.Size(34, 34);
             this.coord44.TabIndex = 41;
@@ -499,7 +507,7 @@
             // 
             // coord45
             // 
-            this.coord45.Location = new System.Drawing.Point(193, 159);
+            this.coord45.Location = new System.Drawing.Point(190, 176);
             this.coord45.Name = "coord45";
             this.coord45.Size = new System.Drawing.Size(34, 34);
             this.coord45.TabIndex = 42;
@@ -508,7 +516,7 @@
             // 
             // coord46
             // 
-            this.coord46.Location = new System.Drawing.Point(231, 159);
+            this.coord46.Location = new System.Drawing.Point(228, 176);
             this.coord46.Name = "coord46";
             this.coord46.Size = new System.Drawing.Size(34, 34);
             this.coord46.TabIndex = 43;
@@ -517,7 +525,7 @@
             // 
             // coord47
             // 
-            this.coord47.Location = new System.Drawing.Point(266, 159);
+            this.coord47.Location = new System.Drawing.Point(263, 176);
             this.coord47.Name = "coord47";
             this.coord47.Size = new System.Drawing.Size(34, 34);
             this.coord47.TabIndex = 44;
@@ -526,7 +534,7 @@
             // 
             // coord48
             // 
-            this.coord48.Location = new System.Drawing.Point(301, 159);
+            this.coord48.Location = new System.Drawing.Point(298, 176);
             this.coord48.Name = "coord48";
             this.coord48.Size = new System.Drawing.Size(34, 34);
             this.coord48.TabIndex = 45;
@@ -535,7 +543,7 @@
             // 
             // coord50
             // 
-            this.coord50.Location = new System.Drawing.Point(15, 194);
+            this.coord50.Location = new System.Drawing.Point(12, 211);
             this.coord50.Name = "coord50";
             this.coord50.Size = new System.Drawing.Size(33, 34);
             this.coord50.TabIndex = 46;
@@ -544,7 +552,7 @@
             // 
             // coord51
             // 
-            this.coord51.Location = new System.Drawing.Point(50, 194);
+            this.coord51.Location = new System.Drawing.Point(47, 211);
             this.coord51.Name = "coord51";
             this.coord51.Size = new System.Drawing.Size(34, 34);
             this.coord51.TabIndex = 47;
@@ -553,7 +561,7 @@
             // 
             // coord52
             // 
-            this.coord52.Location = new System.Drawing.Point(86, 194);
+            this.coord52.Location = new System.Drawing.Point(83, 211);
             this.coord52.Name = "coord52";
             this.coord52.Size = new System.Drawing.Size(33, 34);
             this.coord52.TabIndex = 48;
@@ -562,7 +570,7 @@
             // 
             // coord53
             // 
-            this.coord53.Location = new System.Drawing.Point(123, 194);
+            this.coord53.Location = new System.Drawing.Point(120, 211);
             this.coord53.Name = "coord53";
             this.coord53.Size = new System.Drawing.Size(33, 34);
             this.coord53.TabIndex = 49;
@@ -571,7 +579,7 @@
             // 
             // coord54
             // 
-            this.coord54.Location = new System.Drawing.Point(158, 194);
+            this.coord54.Location = new System.Drawing.Point(155, 211);
             this.coord54.Name = "coord54";
             this.coord54.Size = new System.Drawing.Size(34, 34);
             this.coord54.TabIndex = 50;
@@ -580,7 +588,7 @@
             // 
             // coord55
             // 
-            this.coord55.Location = new System.Drawing.Point(193, 194);
+            this.coord55.Location = new System.Drawing.Point(190, 211);
             this.coord55.Name = "coord55";
             this.coord55.Size = new System.Drawing.Size(34, 34);
             this.coord55.TabIndex = 51;
@@ -590,7 +598,7 @@
             // 
             // coord56
             // 
-            this.coord56.Location = new System.Drawing.Point(231, 194);
+            this.coord56.Location = new System.Drawing.Point(228, 211);
             this.coord56.Name = "coord56";
             this.coord56.Size = new System.Drawing.Size(33, 34);
             this.coord56.TabIndex = 52;
@@ -599,7 +607,7 @@
             // 
             // coord57
             // 
-            this.coord57.Location = new System.Drawing.Point(266, 194);
+            this.coord57.Location = new System.Drawing.Point(263, 211);
             this.coord57.Name = "coord57";
             this.coord57.Size = new System.Drawing.Size(34, 34);
             this.coord57.TabIndex = 53;
@@ -608,7 +616,7 @@
             // 
             // coord58
             // 
-            this.coord58.Location = new System.Drawing.Point(302, 194);
+            this.coord58.Location = new System.Drawing.Point(299, 211);
             this.coord58.Name = "coord58";
             this.coord58.Size = new System.Drawing.Size(33, 34);
             this.coord58.TabIndex = 54;
@@ -617,7 +625,7 @@
             // 
             // coord60
             // 
-            this.coord60.Location = new System.Drawing.Point(15, 232);
+            this.coord60.Location = new System.Drawing.Point(12, 249);
             this.coord60.Name = "coord60";
             this.coord60.Size = new System.Drawing.Size(33, 33);
             this.coord60.TabIndex = 55;
@@ -626,7 +634,7 @@
             // 
             // coord61
             // 
-            this.coord61.Location = new System.Drawing.Point(50, 232);
+            this.coord61.Location = new System.Drawing.Point(47, 249);
             this.coord61.Name = "coord61";
             this.coord61.Size = new System.Drawing.Size(34, 34);
             this.coord61.TabIndex = 56;
@@ -635,7 +643,7 @@
             // 
             // coord62
             // 
-            this.coord62.Location = new System.Drawing.Point(86, 232);
+            this.coord62.Location = new System.Drawing.Point(83, 249);
             this.coord62.Name = "coord62";
             this.coord62.Size = new System.Drawing.Size(33, 34);
             this.coord62.TabIndex = 57;
@@ -644,7 +652,7 @@
             // 
             // coord70
             // 
-            this.coord70.Location = new System.Drawing.Point(15, 267);
+            this.coord70.Location = new System.Drawing.Point(12, 284);
             this.coord70.Name = "coord70";
             this.coord70.Size = new System.Drawing.Size(33, 34);
             this.coord70.TabIndex = 58;
@@ -653,7 +661,7 @@
             // 
             // coord71
             // 
-            this.coord71.Location = new System.Drawing.Point(50, 267);
+            this.coord71.Location = new System.Drawing.Point(47, 284);
             this.coord71.Name = "coord71";
             this.coord71.Size = new System.Drawing.Size(34, 34);
             this.coord71.TabIndex = 59;
@@ -662,7 +670,7 @@
             // 
             // coord72
             // 
-            this.coord72.Location = new System.Drawing.Point(86, 267);
+            this.coord72.Location = new System.Drawing.Point(83, 284);
             this.coord72.Name = "coord72";
             this.coord72.Size = new System.Drawing.Size(33, 34);
             this.coord72.TabIndex = 60;
@@ -671,7 +679,7 @@
             // 
             // coord80
             // 
-            this.coord80.Location = new System.Drawing.Point(15, 303);
+            this.coord80.Location = new System.Drawing.Point(12, 320);
             this.coord80.Name = "coord80";
             this.coord80.Size = new System.Drawing.Size(33, 33);
             this.coord80.TabIndex = 61;
@@ -681,7 +689,7 @@
             // 
             // coord81
             // 
-            this.coord81.Location = new System.Drawing.Point(50, 302);
+            this.coord81.Location = new System.Drawing.Point(47, 319);
             this.coord81.Name = "coord81";
             this.coord81.Size = new System.Drawing.Size(34, 34);
             this.coord81.TabIndex = 62;
@@ -690,7 +698,7 @@
             // 
             // coord82
             // 
-            this.coord82.Location = new System.Drawing.Point(86, 302);
+            this.coord82.Location = new System.Drawing.Point(83, 319);
             this.coord82.Name = "coord82";
             this.coord82.Size = new System.Drawing.Size(33, 34);
             this.coord82.TabIndex = 63;
@@ -699,7 +707,7 @@
             // 
             // coord63
             // 
-            this.coord63.Location = new System.Drawing.Point(123, 232);
+            this.coord63.Location = new System.Drawing.Point(120, 249);
             this.coord63.Name = "coord63";
             this.coord63.Size = new System.Drawing.Size(33, 34);
             this.coord63.TabIndex = 64;
@@ -708,7 +716,7 @@
             // 
             // coord64
             // 
-            this.coord64.Location = new System.Drawing.Point(158, 232);
+            this.coord64.Location = new System.Drawing.Point(155, 249);
             this.coord64.Name = "coord64";
             this.coord64.Size = new System.Drawing.Size(34, 34);
             this.coord64.TabIndex = 65;
@@ -717,7 +725,7 @@
             // 
             // coord65
             // 
-            this.coord65.Location = new System.Drawing.Point(193, 232);
+            this.coord65.Location = new System.Drawing.Point(190, 249);
             this.coord65.Name = "coord65";
             this.coord65.Size = new System.Drawing.Size(34, 34);
             this.coord65.TabIndex = 66;
@@ -726,7 +734,7 @@
             // 
             // coord73
             // 
-            this.coord73.Location = new System.Drawing.Point(123, 267);
+            this.coord73.Location = new System.Drawing.Point(120, 284);
             this.coord73.Name = "coord73";
             this.coord73.Size = new System.Drawing.Size(33, 34);
             this.coord73.TabIndex = 67;
@@ -735,7 +743,7 @@
             // 
             // coord74
             // 
-            this.coord74.Location = new System.Drawing.Point(158, 267);
+            this.coord74.Location = new System.Drawing.Point(155, 284);
             this.coord74.Name = "coord74";
             this.coord74.Size = new System.Drawing.Size(34, 34);
             this.coord74.TabIndex = 68;
@@ -744,7 +752,7 @@
             // 
             // coord75
             // 
-            this.coord75.Location = new System.Drawing.Point(194, 267);
+            this.coord75.Location = new System.Drawing.Point(191, 284);
             this.coord75.Name = "coord75";
             this.coord75.Size = new System.Drawing.Size(33, 34);
             this.coord75.TabIndex = 69;
@@ -753,7 +761,7 @@
             // 
             // coord83
             // 
-            this.coord83.Location = new System.Drawing.Point(123, 303);
+            this.coord83.Location = new System.Drawing.Point(120, 320);
             this.coord83.Name = "coord83";
             this.coord83.Size = new System.Drawing.Size(33, 33);
             this.coord83.TabIndex = 70;
@@ -762,7 +770,7 @@
             // 
             // coord84
             // 
-            this.coord84.Location = new System.Drawing.Point(158, 302);
+            this.coord84.Location = new System.Drawing.Point(155, 319);
             this.coord84.Name = "coord84";
             this.coord84.Size = new System.Drawing.Size(34, 34);
             this.coord84.TabIndex = 71;
@@ -771,7 +779,7 @@
             // 
             // coord85
             // 
-            this.coord85.Location = new System.Drawing.Point(194, 302);
+            this.coord85.Location = new System.Drawing.Point(191, 319);
             this.coord85.Name = "coord85";
             this.coord85.Size = new System.Drawing.Size(33, 34);
             this.coord85.TabIndex = 72;
@@ -780,7 +788,7 @@
             // 
             // coord66
             // 
-            this.coord66.Location = new System.Drawing.Point(231, 232);
+            this.coord66.Location = new System.Drawing.Point(228, 249);
             this.coord66.Name = "coord66";
             this.coord66.Size = new System.Drawing.Size(33, 33);
             this.coord66.TabIndex = 73;
@@ -789,7 +797,7 @@
             // 
             // coord67
             // 
-            this.coord67.Location = new System.Drawing.Point(266, 232);
+            this.coord67.Location = new System.Drawing.Point(263, 249);
             this.coord67.Name = "coord67";
             this.coord67.Size = new System.Drawing.Size(34, 33);
             this.coord67.TabIndex = 74;
@@ -798,7 +806,7 @@
             // 
             // coord68
             // 
-            this.coord68.Location = new System.Drawing.Point(301, 232);
+            this.coord68.Location = new System.Drawing.Point(298, 249);
             this.coord68.Name = "coord68";
             this.coord68.Size = new System.Drawing.Size(34, 33);
             this.coord68.TabIndex = 75;
@@ -807,7 +815,7 @@
             // 
             // coord76
             // 
-            this.coord76.Location = new System.Drawing.Point(231, 267);
+            this.coord76.Location = new System.Drawing.Point(228, 284);
             this.coord76.Name = "coord76";
             this.coord76.Size = new System.Drawing.Size(34, 34);
             this.coord76.TabIndex = 76;
@@ -816,7 +824,7 @@
             // 
             // coord77
             // 
-            this.coord77.Location = new System.Drawing.Point(266, 267);
+            this.coord77.Location = new System.Drawing.Point(263, 284);
             this.coord77.Name = "coord77";
             this.coord77.Size = new System.Drawing.Size(34, 34);
             this.coord77.TabIndex = 77;
@@ -825,7 +833,7 @@
             // 
             // coord78
             // 
-            this.coord78.Location = new System.Drawing.Point(301, 267);
+            this.coord78.Location = new System.Drawing.Point(298, 284);
             this.coord78.Name = "coord78";
             this.coord78.Size = new System.Drawing.Size(34, 34);
             this.coord78.TabIndex = 78;
@@ -834,7 +842,7 @@
             // 
             // coord86
             // 
-            this.coord86.Location = new System.Drawing.Point(231, 303);
+            this.coord86.Location = new System.Drawing.Point(228, 320);
             this.coord86.Name = "coord86";
             this.coord86.Size = new System.Drawing.Size(34, 33);
             this.coord86.TabIndex = 79;
@@ -843,7 +851,7 @@
             // 
             // coord87
             // 
-            this.coord87.Location = new System.Drawing.Point(266, 302);
+            this.coord87.Location = new System.Drawing.Point(263, 319);
             this.coord87.Name = "coord87";
             this.coord87.Size = new System.Drawing.Size(34, 34);
             this.coord87.TabIndex = 80;
@@ -852,7 +860,7 @@
             // 
             // coord88
             // 
-            this.coord88.Location = new System.Drawing.Point(302, 302);
+            this.coord88.Location = new System.Drawing.Point(299, 319);
             this.coord88.Name = "coord88";
             this.coord88.Size = new System.Drawing.Size(33, 34);
             this.coord88.TabIndex = 81;
@@ -860,17 +868,9 @@
             this.coord88.UseVisualStyleBackColor = true;
             this.coord88.Click += new System.EventHandler(this.event_Click);
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(11, 349);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(328, 102);
-            this.textBox1.TabIndex = 82;
-            // 
             // solutionChecker
             // 
-            this.solutionChecker.Location = new System.Drawing.Point(11, 457);
+            this.solutionChecker.Location = new System.Drawing.Point(8, 366);
             this.solutionChecker.Name = "solutionChecker";
             this.solutionChecker.Size = new System.Drawing.Size(328, 30);
             this.solutionChecker.TabIndex = 83;
@@ -878,13 +878,74 @@
             this.solutionChecker.UseVisualStyleBackColor = true;
             this.solutionChecker.Click += new System.EventHandler(this.solutionChecker_Click);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.helpToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(351, 24);
+            this.menuStrip1.TabIndex = 84;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.hintToolStripMenuItem,
+            this.howToPlayToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // hintToolStripMenuItem
+            // 
+            this.hintToolStripMenuItem.Name = "hintToolStripMenuItem";
+            this.hintToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.hintToolStripMenuItem.Text = "Hint";
+            // 
+            // howToPlayToolStripMenuItem
+            // 
+            this.howToPlayToolStripMenuItem.Name = "howToPlayToolStripMenuItem";
+            this.howToPlayToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.howToPlayToolStripMenuItem.Text = "How to play";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newPuzzleToolStripMenuItem,
+            this.savePuzzleToolStripMenuItem,
+            this.savePuzzleToolStripMenuItem1});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // newPuzzleToolStripMenuItem
+            // 
+            this.newPuzzleToolStripMenuItem.Name = "newPuzzleToolStripMenuItem";
+            this.newPuzzleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newPuzzleToolStripMenuItem.Text = "New Puzzle";
+            this.newPuzzleToolStripMenuItem.Click += new System.EventHandler(this.newPuzzleToolStripMenuItem_Click);
+            // 
+            // savePuzzleToolStripMenuItem
+            // 
+            this.savePuzzleToolStripMenuItem.Name = "savePuzzleToolStripMenuItem";
+            this.savePuzzleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.savePuzzleToolStripMenuItem.Text = "Check Solution";
+            this.savePuzzleToolStripMenuItem.Click += new System.EventHandler(this.savePuzzleToolStripMenuItem_Click);
+            // 
+            // savePuzzleToolStripMenuItem1
+            // 
+            this.savePuzzleToolStripMenuItem1.Name = "savePuzzleToolStripMenuItem1";
+            this.savePuzzleToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.savePuzzleToolStripMenuItem1.Text = "Save Puzzle";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(351, 499);
             this.Controls.Add(this.solutionChecker);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.coord88);
             this.Controls.Add(this.coord87);
             this.Controls.Add(this.coord86);
@@ -967,11 +1028,15 @@
             this.Controls.Add(this.coord01);
             this.Controls.Add(this.coord00);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Sudoku";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1061,8 +1126,15 @@
         private System.Windows.Forms.Button coord86;
         private System.Windows.Forms.Button coord87;
         private System.Windows.Forms.Button coord88;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button solutionChecker;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem hintToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem howToPlayToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem newPuzzleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem savePuzzleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem savePuzzleToolStripMenuItem1;
     }
 }
 

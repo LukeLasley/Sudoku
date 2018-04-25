@@ -15,12 +15,13 @@ namespace Sudoku
         private Form1 gui;
         private Dictionary<string, string> notesDictionary;
         private InputNumber inputNumber;
+        private DifficultyChooser difficultyChooser;
         private int[,] solution;
 
         public GameController()
         {
             build();
-            DifficultyChooser difficultyChooser = new DifficultyChooser(this);
+            difficultyChooser = new DifficultyChooser(this);
             difficultyChooser.Show();
             inputNumber = new InputNumber(this, gui);
             gui.setInputNumber(inputNumber);
@@ -38,6 +39,11 @@ namespace Sudoku
             prover = new Prover(curBoard);
             //the notesDictionary is where the notes for each box is stored
             
+        }
+        internal void choseDifficulty()
+        {
+            rebuild();
+            difficultyChooser.Show();
         }
         //wipe old gui and restart. it is easier than trying to carefully clear what the user is already done with.
         internal void rebuild()

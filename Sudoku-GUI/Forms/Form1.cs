@@ -41,11 +41,12 @@ namespace Sudoku
                 buttonsDictionary[coordString].ForeColor = Color.Blue;
             }
         }
+        /*
         //currently used for debugging
         internal void write(string s)
         {
             textBox1.Text += s;
-        }
+        }*/
 
         internal void setInputNumber(InputNumber inputNumber)
         {
@@ -120,9 +121,8 @@ namespace Sudoku
             Control button = buttonsDictionary[coordString];
             notClickable.Add(button);
         }
-
         //checks to see if user solved puzzle
-        private void solutionChecker_Click(object sender, EventArgs e)
+        public void checkSolution()
         {
             //if they are correct give them the option of a new puzzle
             if (gameController.checkSolution())
@@ -136,6 +136,21 @@ namespace Sudoku
                 Incorrect incorrect = new Incorrect(gameController);
                 incorrect.Show();
             }
+        }
+        
+        private void solutionChecker_Click(object sender, EventArgs e)
+        {
+            checkSolution();
+        }
+
+        private void newPuzzleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            gameController.choseDifficulty();
+        }
+        //same code as button
+        private void savePuzzleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            checkSolution();
         }
     }
 }
