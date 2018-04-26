@@ -47,6 +47,12 @@ namespace Sudoku
             rebuild();
             difficultyChooser.Show();
         }
+
+        internal void decrementHintsRemaining()
+        {
+            hintsRemaining--;
+        }
+
         //wipe old gui and restart. it is easier than trying to carefully clear what the user is already done with.
         internal void rebuild()
         {
@@ -130,5 +136,42 @@ namespace Sudoku
         {
             return hintsRemaining;
         }
+
+        public Tuple<Point, int> giveHint(bool checkForError)
+        {
+            Point p = new Point();
+            p.X = -1;
+            p.Y = -1;
+            int[,] curAnswer = curBoard.getPoints();
+            for (int i = 0; i < 9; i++)
+            {
+                for (int j = 0; j < 9; j++)
+                {
+                    if (checkForError)
+                    {
+                        if (solution[i, j] != curAnswer[i, j] && curAnswer[i, j] != 0)
+                        {
+                            p.X = j;
+                            p.Y = i;
+                            Tuple<Point, int> incorrecBox = Tuple.Create(p, solution[i, j]);
+                            return incorrecBox;
+                        }
+                    }
+                    else
+                    {
+                        if(curAnswer[i,j] == 0)
+                        {
+                            p.X = j;
+                            p.Y = i;
+                            Tuple<Point, int> emptyBox = Tuple.Create(p, solution[i, j]);
+                            return emptyBox;
+                        }
+                    }
+                }
+            }
+            Tuple<Point, int> toReturn = Tuple.Create(p, -1);
+            return toReturn;
+        }
     }
+
 }

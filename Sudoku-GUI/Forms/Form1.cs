@@ -31,6 +31,16 @@ namespace Sudoku
 
         }
 
+        internal void updateWithHint(Tuple<Point, int> hint, Color color)
+        {
+            Point location = hint.Item1;
+            int answer = hint.Item2;
+            var coordString = "coord" + location.Y + location.X;
+            buttonsDictionary[coordString].Text = answer.ToString();
+            buttonsDictionary[coordString].ForeColor = color;
+            
+        }
+
         //updates the box in the gui. If done by user set the text to blue so they know which numbers they can edit
         public void updateCoord(int y, int x, String value, bool byUser)
         {
@@ -133,7 +143,7 @@ namespace Sudoku
             else
             //tell them they are incorrect give them an option for a hint, to continue or a new puzzle
             {
-                Incorrect incorrect = new Incorrect(gameController);
+                Incorrect incorrect = new Incorrect(gameController, this);
                 incorrect.Show();
             }
         }
@@ -155,7 +165,7 @@ namespace Sudoku
 
         private void hintToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            HintScreen hint = new HintScreen(gameController);
+            HintScreen hint = new HintScreen(gameController, this);
             hint.Show();
         }
     }

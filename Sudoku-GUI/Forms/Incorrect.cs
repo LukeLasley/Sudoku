@@ -13,16 +13,18 @@ namespace Sudoku.Forms
     public partial class Incorrect : Form
     {
         GameController gameController;
+        Form1 form;
 
-        public Incorrect(GameController game)
+        public Incorrect(GameController game, Form1 f)
         {
             gameController = game;
+            form = f;
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            HintScreen hint = new HintScreen(gameController);
+            HintScreen hint = new HintScreen(gameController, form);
             hint.Show();
             this.Dispose();
         }

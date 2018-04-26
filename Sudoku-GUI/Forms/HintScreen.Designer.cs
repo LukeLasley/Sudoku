@@ -33,7 +33,6 @@
             this.answerButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.neitherButton = new System.Windows.Forms.Button();
-            this.answerLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // hintlabel
@@ -85,21 +84,11 @@
             this.neitherButton.UseVisualStyleBackColor = true;
             this.neitherButton.Click += new System.EventHandler(this.button3_Click);
             // 
-            // answerLabel
-            // 
-            this.answerLabel.AutoSize = true;
-            this.answerLabel.Location = new System.Drawing.Point(18, 175);
-            this.answerLabel.Name = "answerLabel";
-            this.answerLabel.Size = new System.Drawing.Size(63, 13);
-            this.answerLabel.TabIndex = 5;
-            this.answerLabel.Text = "Placeholder";
-            // 
             // HintScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(258, 254);
-            this.Controls.Add(this.answerLabel);
+            this.ClientSize = new System.Drawing.Size(258, 168);
             this.Controls.Add(this.neitherButton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.answerButton);
@@ -119,6 +108,5 @@
         private System.Windows.Forms.Button answerButton;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button neitherButton;
-        private System.Windows.Forms.Label answerLabel;
     }
 }
