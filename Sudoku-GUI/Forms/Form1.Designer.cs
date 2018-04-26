@@ -112,12 +112,12 @@
             this.coord88 = new System.Windows.Forms.Button();
             this.solutionChecker = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hintToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.howToPlayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newPuzzleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.savePuzzleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hintToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.howToPlayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -879,28 +879,6 @@
             this.menuStrip1.TabIndex = 84;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // helpToolStripMenuItem
-            // 
-            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.hintToolStripMenuItem,
-            this.howToPlayToolStripMenuItem});
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.helpToolStripMenuItem.Text = "Help";
-            // 
-            // hintToolStripMenuItem
-            // 
-            this.hintToolStripMenuItem.Name = "hintToolStripMenuItem";
-            this.hintToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.hintToolStripMenuItem.Text = "Hint";
-            this.hintToolStripMenuItem.Click += new System.EventHandler(this.hintToolStripMenuItem_Click);
-            // 
-            // howToPlayToolStripMenuItem
-            // 
-            this.howToPlayToolStripMenuItem.Name = "howToPlayToolStripMenuItem";
-            this.howToPlayToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.howToPlayToolStripMenuItem.Text = "How to play";
-            // 
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -913,16 +891,38 @@
             // newPuzzleToolStripMenuItem
             // 
             this.newPuzzleToolStripMenuItem.Name = "newPuzzleToolStripMenuItem";
-            this.newPuzzleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newPuzzleToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.newPuzzleToolStripMenuItem.Text = "New Puzzle";
             this.newPuzzleToolStripMenuItem.Click += new System.EventHandler(this.newPuzzleToolStripMenuItem_Click);
             // 
             // savePuzzleToolStripMenuItem
             // 
             this.savePuzzleToolStripMenuItem.Name = "savePuzzleToolStripMenuItem";
-            this.savePuzzleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.savePuzzleToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.savePuzzleToolStripMenuItem.Text = "Check Solution";
             this.savePuzzleToolStripMenuItem.Click += new System.EventHandler(this.savePuzzleToolStripMenuItem_Click);
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.hintToolStripMenuItem,
+            this.howToPlayToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // hintToolStripMenuItem
+            // 
+            this.hintToolStripMenuItem.Name = "hintToolStripMenuItem";
+            this.hintToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.hintToolStripMenuItem.Text = "Hint";
+            this.hintToolStripMenuItem.Click += new System.EventHandler(this.hintToolStripMenuItem_Click);
+            // 
+            // howToPlayToolStripMenuItem
+            // 
+            this.howToPlayToolStripMenuItem.Name = "howToPlayToolStripMenuItem";
+            this.howToPlayToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.howToPlayToolStripMenuItem.Text = "How to play";
             // 
             // pictureBox1
             // 
@@ -937,7 +937,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(351, 499);
+            this.ClientSize = new System.Drawing.Size(351, 404);
             this.Controls.Add(this.solutionChecker);
             this.Controls.Add(this.coord88);
             this.Controls.Add(this.coord87);
