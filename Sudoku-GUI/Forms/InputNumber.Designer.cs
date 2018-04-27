@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InputNumber));
             this.notes = new System.Windows.Forms.TextBox();
             this.notesLabel = new System.Windows.Forms.Label();
             this.answer = new System.Windows.Forms.TextBox();
@@ -40,7 +41,7 @@
             this.notes.Location = new System.Drawing.Point(12, 93);
             this.notes.Multiline = true;
             this.notes.Name = "notes";
-            this.notes.Size = new System.Drawing.Size(126, 71);
+            this.notes.Size = new System.Drawing.Size(150, 71);
             this.notes.TabIndex = 0;
             // 
             // notesLabel
@@ -84,15 +85,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(149, 177);
+            this.ClientSize = new System.Drawing.Size(174, 177);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.answer);
             this.Controls.Add(this.notesLabel);
             this.Controls.Add(this.notes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "InputNumber";
-            this.Text = "InputNumber";
+            this.Text = "Input";
             this.Load += new System.EventHandler(this.InputNumber_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Incorrect));
             this.hintButton = new System.Windows.Forms.Button();
             this.hintLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -116,6 +117,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.hintLabel);
             this.Controls.Add(this.hintButton);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Incorrect";
             this.Text = "Incorrect";
             this.Load += new System.EventHandler(this.Incorrect_Load);

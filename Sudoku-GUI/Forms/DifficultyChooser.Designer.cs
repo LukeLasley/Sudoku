@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DifficultyChooser));
             this.easyButton = new System.Windows.Forms.Button();
             this.meduimButton = new System.Windows.Forms.Button();
             this.hardButton = new System.Windows.Forms.Button();
@@ -81,6 +82,7 @@
             this.Controls.Add(this.hardButton);
             this.Controls.Add(this.meduimButton);
             this.Controls.Add(this.easyButton);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DifficultyChooser";
             this.Text = "Select Level";
             this.Load += new System.EventHandler(this.DifficultyChooser_Load);

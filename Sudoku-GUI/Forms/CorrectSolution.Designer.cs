@@ -47,7 +47,7 @@
             // 
             // playAgainLabel
             // 
-            this.playAgainLabel.Location = new System.Drawing.Point(12, 96);
+            this.playAgainLabel.Location = new System.Drawing.Point(7, 67);
             this.playAgainLabel.Name = "playAgainLabel";
             this.playAgainLabel.Size = new System.Drawing.Size(248, 35);
             this.playAgainLabel.TabIndex = 1;
@@ -56,7 +56,7 @@
             // 
             // easyButton
             // 
-            this.easyButton.Location = new System.Drawing.Point(16, 135);
+            this.easyButton.Location = new System.Drawing.Point(16, 105);
             this.easyButton.Name = "easyButton";
             this.easyButton.Size = new System.Drawing.Size(75, 23);
             this.easyButton.TabIndex = 2;
@@ -66,7 +66,7 @@
             // 
             // mediumButton
             // 
-            this.mediumButton.Location = new System.Drawing.Point(97, 134);
+            this.mediumButton.Location = new System.Drawing.Point(97, 105);
             this.mediumButton.Name = "mediumButton";
             this.mediumButton.Size = new System.Drawing.Size(75, 23);
             this.mediumButton.TabIndex = 3;
@@ -76,7 +76,7 @@
             // 
             // hardButton
             // 
-            this.hardButton.Location = new System.Drawing.Point(178, 134);
+            this.hardButton.Location = new System.Drawing.Point(178, 105);
             this.hardButton.Name = "hardButton";
             this.hardButton.Size = new System.Drawing.Size(75, 23);
             this.hardButton.TabIndex = 4;
@@ -89,7 +89,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(267, 168);
+            this.ClientSize = new System.Drawing.Size(267, 134);
             this.Controls.Add(this.hardButton);
             this.Controls.Add(this.mediumButton);
             this.Controls.Add(this.easyButton);

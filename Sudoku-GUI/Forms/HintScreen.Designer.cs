@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HintScreen));
             this.hintlabel = new System.Windows.Forms.Label();
             this.mistakeButton = new System.Windows.Forms.Button();
             this.answerButton = new System.Windows.Forms.Button();
@@ -94,6 +95,7 @@
             this.Controls.Add(this.answerButton);
             this.Controls.Add(this.mistakeButton);
             this.Controls.Add(this.hintlabel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "HintScreen";
             this.Text = "Hint";
             this.ResumeLayout(false);
