@@ -168,5 +168,11 @@ namespace Sudoku
             HintScreen hint = new HintScreen(gameController, this);
             hint.Show();
         }
+
+        private void howToPlayToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HowToPlayScreen howToPlayScreen = new HowToPlayScreen();
+            howToPlayScreen.Show();
+        }
     }
 }

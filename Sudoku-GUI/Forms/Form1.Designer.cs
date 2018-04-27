@@ -914,15 +914,16 @@
             // hintToolStripMenuItem
             // 
             this.hintToolStripMenuItem.Name = "hintToolStripMenuItem";
-            this.hintToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.hintToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.hintToolStripMenuItem.Text = "Hint";
             this.hintToolStripMenuItem.Click += new System.EventHandler(this.hintToolStripMenuItem_Click);
             // 
             // howToPlayToolStripMenuItem
             // 
             this.howToPlayToolStripMenuItem.Name = "howToPlayToolStripMenuItem";
-            this.howToPlayToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.howToPlayToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.howToPlayToolStripMenuItem.Text = "How to play";
+            this.howToPlayToolStripMenuItem.Click += new System.EventHandler(this.howToPlayToolStripMenuItem_Click);
             // 
             // pictureBox1
             // 
