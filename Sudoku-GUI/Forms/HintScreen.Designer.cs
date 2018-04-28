@@ -96,8 +96,10 @@
             this.Controls.Add(this.mistakeButton);
             this.Controls.Add(this.hintlabel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(274, 207);
             this.Name = "HintScreen";
             this.Text = "Hint";
+            this.Load += new System.EventHandler(this.HintScreen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

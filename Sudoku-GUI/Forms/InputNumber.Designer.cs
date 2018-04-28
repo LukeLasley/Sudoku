@@ -93,6 +93,7 @@
             this.Controls.Add(this.notes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(190, 216);
             this.Name = "InputNumber";
             this.Text = "Input";
             this.Load += new System.EventHandler(this.InputNumber_Load);

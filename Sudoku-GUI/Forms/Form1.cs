@@ -24,6 +24,7 @@ namespace Sudoku
             buttonsDictionary = new Dictionary<string, Control>();
             updateButtonDictionary();
             notClickable = new List<Control>();
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
 
         private void Form1_Load(object sender, EventArgs e)

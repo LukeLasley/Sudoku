@@ -16,5 +16,10 @@ namespace Sudoku.Forms
         {
             InitializeComponent();
         }
+
+        private void HowToPlayScreen_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

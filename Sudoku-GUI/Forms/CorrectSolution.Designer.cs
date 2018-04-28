@@ -96,8 +96,10 @@
             this.Controls.Add(this.playAgainLabel);
             this.Controls.Add(this.correctLabel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(283, 173);
             this.Name = "CorrectSolution";
             this.Text = "Correct!";
+            this.Load += new System.EventHandler(this.CorrectSolution_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

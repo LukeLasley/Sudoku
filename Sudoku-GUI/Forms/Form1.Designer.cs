@@ -914,14 +914,14 @@
             // hintToolStripMenuItem
             // 
             this.hintToolStripMenuItem.Name = "hintToolStripMenuItem";
-            this.hintToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.hintToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.hintToolStripMenuItem.Text = "Hint";
             this.hintToolStripMenuItem.Click += new System.EventHandler(this.hintToolStripMenuItem_Click);
             // 
             // howToPlayToolStripMenuItem
             // 
             this.howToPlayToolStripMenuItem.Name = "howToPlayToolStripMenuItem";
-            this.howToPlayToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.howToPlayToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.howToPlayToolStripMenuItem.Text = "How to play";
             this.howToPlayToolStripMenuItem.Click += new System.EventHandler(this.howToPlayToolStripMenuItem_Click);
             // 
@@ -1025,6 +1025,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximumSize = new System.Drawing.Size(367, 443);
             this.Name = "Form1";
             this.Text = "Sudoku";
             this.Load += new System.EventHandler(this.Form1_Load);

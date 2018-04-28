@@ -51,6 +51,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "HowToPlayScreen";
             this.Text = "How To Play";
+            this.Load += new System.EventHandler(this.HowToPlayScreen_Load);
             this.ResumeLayout(false);
 
         }

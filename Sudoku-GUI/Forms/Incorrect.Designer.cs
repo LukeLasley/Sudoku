@@ -118,6 +118,7 @@
             this.Controls.Add(this.hintLabel);
             this.Controls.Add(this.hintButton);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(284, 201);
             this.Name = "Incorrect";
             this.Text = "Incorrect";
             this.Load += new System.EventHandler(this.Incorrect_Load);

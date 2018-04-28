@@ -17,6 +17,7 @@ namespace Sudoku.Forms
         {
             gameController = game;
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
 
         private void easyButton_Click(object sender, EventArgs e)
@@ -38,6 +39,11 @@ namespace Sudoku.Forms
             gameController.rebuild();
             gameController.createHardGame();
             this.Dispose();
+        }
+
+        private void CorrectSolution_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

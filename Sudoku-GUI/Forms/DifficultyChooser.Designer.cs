@@ -83,6 +83,7 @@
             this.Controls.Add(this.meduimButton);
             this.Controls.Add(this.easyButton);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(271, 136);
             this.Name = "DifficultyChooser";
             this.Text = "Select Level";
             this.Load += new System.EventHandler(this.DifficultyChooser_Load);

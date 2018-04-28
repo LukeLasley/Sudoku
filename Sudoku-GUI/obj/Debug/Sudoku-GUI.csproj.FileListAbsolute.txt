@@ -37,3 +37,6 @@ C:\Users\llasley\source\repos\Sudoku\Sudoku-GUI\obj\Debug\Sudoku.Forms.Incorrect
 C:\Users\llasley\source\repos\Sudoku\Sudoku-GUI\obj\Debug\Sudoku.InputNumber.resources
 C:\Users\llasley\source\repos\Sudoku\Sudoku-GUI\obj\Debug\Sudoku.Forms.HintScreen.resources
 C:\Users\llasley\source\repos\Sudoku\Sudoku-GUI\obj\Debug\Sudoku.Forms.HowToPlayScreen.resources
+E:\Sudoku-GUI\Sudoku-GUI\obj\Debug\Sudoku.Forms.CorrectSolution.resources
+E:\Sudoku-GUI\Sudoku-GUI\obj\Debug\Sudoku.Forms.HintScreen.resources
+E:\Sudoku-GUI\Sudoku-GUI\obj\Debug\Sudoku.Forms.HowToPlayScreen.resources

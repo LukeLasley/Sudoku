@@ -20,6 +20,7 @@ namespace Sudoku
             game = gameController;
             f = form;
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
         //button to save what the user input
         private void button1_Click(object sender, EventArgs e)

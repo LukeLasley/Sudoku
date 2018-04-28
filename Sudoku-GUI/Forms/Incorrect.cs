@@ -20,6 +20,7 @@ namespace Sudoku.Forms
             gameController = game;
             form = f;
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -18,6 +18,7 @@ namespace Sudoku
         {
             game = gameControl;
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
 
         private void DifficultyChooser_Load(object sender, EventArgs e)

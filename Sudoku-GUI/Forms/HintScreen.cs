@@ -28,6 +28,7 @@ namespace Sudoku.Forms
                 mistakeButton.Enabled = false;
                 answerButton.Enabled = false;
             }
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -55,6 +56,11 @@ namespace Sudoku.Forms
         private void button3_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void HintScreen_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
